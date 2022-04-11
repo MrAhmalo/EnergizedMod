@@ -1,0 +1,8 @@
+{
+  "parent": "energized:custom/lightning_compressor_cog",
+  "textures": {
+    "all": "energized:blocks/animatedcogtexture",
+    "particle": "energized:blocks/animatedcogtexture",
+    "0": "energized:blocks/animatedcogtexture"
+  }
+}
