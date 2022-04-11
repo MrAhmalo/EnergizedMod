@@ -115,6 +115,18 @@
       "locked_code": false,
       "registry_name": "get_an_electric_shock",
       "path": "~/Advancements"
+    },
+    {
+      "name": "CompressedLightning",
+      "type": "fluid",
+      "sortid": 9,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "compressed_lightning",
+      "metadata": {
+        "gb": true
+      },
+      "path": "~/Fluids"
     }
   ],
   "variable_elements": [],
@@ -123,10 +135,13 @@
     "en_us": {
       "item.energized.electronic_bottle": "Filled electronic bottle",
       "block.energized.lightning_compressor": "Lightning Compressor",
+      "fluid.energized.compressed_lightning": "Compressed Lightning",
       "block.energized.animated_cog": "Animated Cog",
+      "item.energized.compressed_lightning_bucket": "Compressed Lightning Bucket",
       "advancements.get_an_electric_shock.title": "Get an electric shock",
       "itemGroup.tabenergized": "Energized",
       "advancements.get_an_electric_shock.descr": "Drink a Electric Bottle",
+      "block.energized.compressed_lightning": "Compressed Lightning",
       "item.energized.empty_electronic_bottle": "Electronic bottle"
     }
   },
