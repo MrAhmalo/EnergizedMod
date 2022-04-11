@@ -1,0 +1,33 @@
+{
+  "display": {
+    "background": "minecraft:textures/block/stone.png",
+    "icon": {
+      "item": "energized:electronic_bottle"
+    },
+    "title": {
+      "translate": "advancements.get_an_electric_shock.title"
+    },
+    "description": {
+      "translate": "advancements.get_an_electric_shock.descr"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "get_an_electric_shock": {
+      "trigger": "minecraft:consume_item",
+      "conditions": {
+        "item": {
+          "items": [
+            "energized:electronic_bottle"
+          ]
+        }
+      }
+    }
+  },
+  "rewards": {
+    "experience": 15
+  }
+}
