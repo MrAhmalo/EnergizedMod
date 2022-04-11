@@ -1,0 +1,9 @@
+{
+  "item.energized.electronic_bottle": "Gefüllte Elektronische Flasche",
+  "block.energized.lightning_compressor": "Blitz Kompressor",
+  "block.energized.animated_cog": "Drehendes Zahnrad",
+  "advancements.get_an_electric_shock.title": "Bekomme einen Elektroschock",
+  "itemGroup.tabenergized": "Energized",
+  "advancements.get_an_electric_shock.descr": "Trinke eine Elektronische Flasche",
+  "item.energized.empty_electronic_bottle": "Elektronische Flasche"
+}
