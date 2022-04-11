@@ -141,6 +141,66 @@
       {
         "name": "Procuderes",
         "children": []
+      },
+      {
+        "name": "Conditions",
+        "children": []
+      },
+      {
+        "name": "Biomes",
+        "children": []
+      },
+      {
+        "name": "Armors",
+        "children": []
+      },
+      {
+        "name": "Advancements",
+        "children": []
+      },
+      {
+        "name": "CustomElements",
+        "children": []
+      },
+      {
+        "name": "Fluids",
+        "children": []
+      },
+      {
+        "name": "Fuels",
+        "children": []
+      },
+      {
+        "name": "Entities",
+        "children": []
+      },
+      {
+        "name": "LootTables",
+        "children": []
+      },
+      {
+        "name": "Particles",
+        "children": []
+      },
+      {
+        "name": "Plants",
+        "children": []
+      },
+      {
+        "name": "Potion Effects",
+        "children": []
+      },
+      {
+        "name": "Structures",
+        "children": []
+      },
+      {
+        "name": "Tags",
+        "children": []
+      },
+      {
+        "name": "Tools",
+        "children": []
       }
     ]
   },
