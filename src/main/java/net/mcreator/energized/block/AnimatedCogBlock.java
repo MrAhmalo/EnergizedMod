@@ -23,7 +23,7 @@ import java.util.Collections;
 
 public class AnimatedCogBlock extends Block {
 	public AnimatedCogBlock() {
-		super(BlockBehaviour.Properties.of(Material.STONE).sound(SoundType.GRAVEL).strength(1f, 10f).noOcclusion()
+		super(BlockBehaviour.Properties.of(Material.STONE).sound(SoundType.METAL).strength(1f, 10f).noOcclusion()
 				.isRedstoneConductor((bs, br, bp) -> false));
 		setRegistryName("animated_cog");
 	}

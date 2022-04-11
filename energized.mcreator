@@ -48,7 +48,8 @@
             "type": "world"
           }
         ]
-      }
+      },
+      "path": "~/Procuderes"
     },
     {
       "name": "EmptyElectronicBottle",
@@ -85,7 +86,8 @@
             "type": "world"
           }
         ]
-      }
+      },
+      "path": "~/Procuderes"
     },
     {
       "name": "ElectronicBottle",
@@ -134,6 +136,10 @@
       },
       {
         "name": "GUI",
+        "children": []
+      },
+      {
+        "name": "Procuderes",
         "children": []
       }
     ]
