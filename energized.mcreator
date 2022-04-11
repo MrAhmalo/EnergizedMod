@@ -143,21 +143,46 @@
       "advancements.get_an_electric_shock.descr": "Drink a Electric Bottle",
       "block.energized.compressed_lightning": "Compressed Lightning",
       "item.energized.empty_electronic_bottle": "Electronic bottle"
+    },
+    "de_de": {
+      "item.energized.electronic_bottle": "Gefüllte Elektronische Flasche",
+      "block.energized.lightning_compressor": "Blitz Kompressor",
+      "block.energized.animated_cog": "Drehendes Zahnrad",
+      "advancements.get_an_electric_shock.title": "Bekomme einen Elektroschock",
+      "itemGroup.tabenergized": "Energized",
+      "advancements.get_an_electric_shock.descr": "Trinke eine Elektronische Flasche",
+      "item.energized.empty_electronic_bottle": "Elektronische Flasche"
     }
   },
   "foldersRoot": {
     "name": "~",
     "children": [
       {
+        "name": "Plants",
+        "children": []
+      },
+      {
+        "name": "Advancements",
+        "children": []
+      },
+      {
         "name": "Blocks",
         "children": []
       },
       {
-        "name": "Items",
+        "name": "LootTables",
         "children": []
       },
       {
-        "name": "Recipes",
+        "name": "Tags",
+        "children": []
+      },
+      {
+        "name": "Conditions",
+        "children": []
+      },
+      {
+        "name": "Potion Effects",
         "children": []
       },
       {
@@ -169,7 +194,11 @@
         "children": []
       },
       {
-        "name": "Conditions",
+        "name": "Fluids",
+        "children": []
+      },
+      {
+        "name": "Items",
         "children": []
       },
       {
@@ -177,31 +206,7 @@
         "children": []
       },
       {
-        "name": "Armors",
-        "children": []
-      },
-      {
-        "name": "Advancements",
-        "children": []
-      },
-      {
-        "name": "CustomElements",
-        "children": []
-      },
-      {
-        "name": "Fluids",
-        "children": []
-      },
-      {
-        "name": "Fuels",
-        "children": []
-      },
-      {
-        "name": "Entities",
-        "children": []
-      },
-      {
-        "name": "LootTables",
+        "name": "Tools",
         "children": []
       },
       {
@@ -209,11 +214,11 @@
         "children": []
       },
       {
-        "name": "Plants",
+        "name": "Recipes",
         "children": []
       },
       {
-        "name": "Potion Effects",
+        "name": "Entities",
         "children": []
       },
       {
@@ -221,11 +226,15 @@
         "children": []
       },
       {
-        "name": "Tags",
+        "name": "Armors",
         "children": []
       },
       {
-        "name": "Tools",
+        "name": "Fuels",
+        "children": []
+      },
+      {
+        "name": "CustomElements",
         "children": []
       }
     ]
