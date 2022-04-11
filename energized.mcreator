@@ -95,6 +95,15 @@
       "locked_code": false,
       "registry_name": "electronic_bottle",
       "path": "~/Items"
+    },
+    {
+      "name": "LightningCompressor",
+      "type": "block",
+      "sortid": 5,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "lightning_compressor",
+      "path": "~/Blocks"
     }
   ],
   "variable_elements": [],
@@ -102,6 +111,7 @@
   "language_map": {
     "en_us": {
       "item.energized.electronic_bottle": "Filled electronic bottle",
+      "block.energized.lightning_compressor": "Lightning Compressor",
       "block.energized.animated_cog": "Animated Cog",
       "itemGroup.tabenergized": "Energized",
       "item.energized.empty_electronic_bottle": "Electronic bottle"
