@@ -2,7 +2,7 @@
   "item.energized.electronic_bottle": "Filled electronic bottle",
   "block.energized.lightning_compressor": "Lightning Compressor",
   "fluid.energized.compressed_lightning": "Compressed Lightning",
-  "block.energized.animated_cog": "Animated Cog",
+  "block.energized.animated_cog": "Rotating Cog",
   "item.energized.compressed_lightning_bucket": "Compressed Lightning Bucket",
   "advancements.get_an_electric_shock.title": "Get an electric shock",
   "itemGroup.tabenergized": "Energized",

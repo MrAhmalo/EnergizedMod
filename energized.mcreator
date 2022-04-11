@@ -3,7 +3,7 @@
     {
       "name": "Energized",
       "type": "tab",
-      "sortid": 5,
+      "sortid": 6,
       "compiles": true,
       "locked_code": false,
       "registry_name": "energized",
@@ -21,7 +21,7 @@
     {
       "name": "ElectronicBottleFoodEaten",
       "type": "procedure",
-      "sortid": 6,
+      "sortid": 7,
       "compiles": true,
       "locked_code": false,
       "registry_name": "electronic_bottle_food_eaten",
@@ -54,7 +54,7 @@
     {
       "name": "EmptyElectronicBottle",
       "type": "item",
-      "sortid": 4,
+      "sortid": 5,
       "compiles": true,
       "locked_code": false,
       "registry_name": "empty_electronic_bottle",
@@ -63,7 +63,7 @@
     {
       "name": "ElectronicBottleItemIsDroppedByPlayer",
       "type": "procedure",
-      "sortid": 7,
+      "sortid": 8,
       "compiles": true,
       "locked_code": false,
       "registry_name": "electronic_bottle_item_is_dropped_by_player",
@@ -92,7 +92,7 @@
     {
       "name": "ElectronicBottle",
       "type": "food",
-      "sortid": 3,
+      "sortid": 4,
       "compiles": true,
       "locked_code": false,
       "registry_name": "electronic_bottle",
@@ -110,7 +110,7 @@
     {
       "name": "GetAnElectricShock",
       "type": "achievement",
-      "sortid": 8,
+      "sortid": 9,
       "compiles": true,
       "locked_code": false,
       "registry_name": "get_an_electric_shock",
@@ -119,7 +119,7 @@
     {
       "name": "CompressedLightning",
       "type": "fluid",
-      "sortid": 9,
+      "sortid": 3,
       "compiles": true,
       "locked_code": false,
       "registry_name": "compressed_lightning",
@@ -127,6 +127,24 @@
         "gb": true
       },
       "path": "~/Fluids"
+    },
+    {
+      "name": "AnimatedCogRecipe",
+      "type": "recipe",
+      "sortid": 10,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "animated_cog_recipe",
+      "path": "~/Recipes"
+    },
+    {
+      "name": "LightningCompressorRecipe",
+      "type": "recipe",
+      "sortid": 11,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "lightning_compressor_recipe",
+      "path": "~/Recipes"
     }
   ],
   "variable_elements": [],
@@ -136,7 +154,7 @@
       "item.energized.electronic_bottle": "Filled electronic bottle",
       "block.energized.lightning_compressor": "Lightning Compressor",
       "fluid.energized.compressed_lightning": "Compressed Lightning",
-      "block.energized.animated_cog": "Animated Cog",
+      "block.energized.animated_cog": "Rotating Cog",
       "item.energized.compressed_lightning_bucket": "Compressed Lightning Bucket",
       "advancements.get_an_electric_shock.title": "Get an electric shock",
       "itemGroup.tabenergized": "Energized",
