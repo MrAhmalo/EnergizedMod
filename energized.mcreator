@@ -115,6 +115,18 @@
       "locked_code": false,
       "registry_name": "get_an_electric_shock",
       "path": "~/Advancements"
+    },
+    {
+      "name": "CompressedLightning",
+      "type": "fluid",
+      "sortid": 9,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "compressed_lightning",
+      "metadata": {
+        "gb": true
+      },
+      "path": "~/Fluids"
     }
   ],
   "variable_elements": [],
@@ -123,19 +135,25 @@
     "en_us": {
       "item.energized.electronic_bottle": "Filled electronic bottle",
       "block.energized.lightning_compressor": "Lightning Compressor",
-      "block.energized.animated_cog": "Rotating Cog",
+      "fluid.energized.compressed_lightning": "Compressed Lightning",
+      "block.energized.animated_cog": "Animated Cog",
+      "item.energized.compressed_lightning_bucket": "Compressed Lightning Bucket",
       "advancements.get_an_electric_shock.title": "Get an electric shock",
       "itemGroup.tabenergized": "Energized",
       "advancements.get_an_electric_shock.descr": "Drink a Electric Bottle",
+      "block.energized.compressed_lightning": "Compressed Lightning",
       "item.energized.empty_electronic_bottle": "Electronic bottle"
     },
     "de_de": {
       "item.energized.electronic_bottle": "Gefüllte Elektronische Flasche",
       "block.energized.lightning_compressor": "Blitz Kompressor",
+      "fluid.energized.compressed_lightning": "Compressed Lightning",
       "block.energized.animated_cog": "Drehendes Zahnrad",
+      "item.energized.compressed_lightning_bucket": "Compressed Lightning Bucket",
       "advancements.get_an_electric_shock.title": "Bekomme einen Elektroschock",
       "itemGroup.tabenergized": "Energized",
       "advancements.get_an_electric_shock.descr": "Trinke eine Elektronische Flasche",
+      "block.energized.compressed_lightning": "Compressed Lightning",
       "item.energized.empty_electronic_bottle": "Elektronische Flasche"
     }
   },
@@ -143,15 +161,31 @@
     "name": "~",
     "children": [
       {
+        "name": "Plants",
+        "children": []
+      },
+      {
+        "name": "Advancements",
+        "children": []
+      },
+      {
         "name": "Blocks",
         "children": []
       },
       {
-        "name": "Items",
+        "name": "LootTables",
         "children": []
       },
       {
-        "name": "Recipes",
+        "name": "Tags",
+        "children": []
+      },
+      {
+        "name": "Conditions",
+        "children": []
+      },
+      {
+        "name": "Potion Effects",
         "children": []
       },
       {
@@ -163,7 +197,11 @@
         "children": []
       },
       {
-        "name": "Conditions",
+        "name": "Fluids",
+        "children": []
+      },
+      {
+        "name": "Items",
         "children": []
       },
       {
@@ -171,31 +209,7 @@
         "children": []
       },
       {
-        "name": "Armors",
-        "children": []
-      },
-      {
-        "name": "Advancements",
-        "children": []
-      },
-      {
-        "name": "CustomElements",
-        "children": []
-      },
-      {
-        "name": "Fluids",
-        "children": []
-      },
-      {
-        "name": "Fuels",
-        "children": []
-      },
-      {
-        "name": "Entities",
-        "children": []
-      },
-      {
-        "name": "LootTables",
+        "name": "Tools",
         "children": []
       },
       {
@@ -203,11 +217,11 @@
         "children": []
       },
       {
-        "name": "Plants",
+        "name": "Recipes",
         "children": []
       },
       {
-        "name": "Potion Effects",
+        "name": "Entities",
         "children": []
       },
       {
@@ -215,11 +229,15 @@
         "children": []
       },
       {
-        "name": "Tags",
+        "name": "Armors",
         "children": []
       },
       {
-        "name": "Tools",
+        "name": "Fuels",
+        "children": []
+      },
+      {
+        "name": "CustomElements",
         "children": []
       }
     ]
@@ -233,7 +251,6 @@
     "license": "Academic Free License v3.0",
     "disableForgeVersionCheck": true,
     "serverSideOnly": false,
-    "modPicture": "energizedlogo",
     "requiredMods": [],
     "dependencies": [],
     "dependants": [],
