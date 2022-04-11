@@ -1,0 +1,11 @@
+{
+  "mappings": {
+    "default": {
+      "map": {
+        "0": "animatedcogtexture",
+        "1": "lightning_rod"
+      },
+      "name": "default"
+    }
+  }
+}
