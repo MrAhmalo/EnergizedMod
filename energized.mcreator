@@ -15,21 +15,12 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "animated_cog"
-    },
-    {
-      "name": "Test",
-      "type": "keybind",
-      "sortid": 2,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "test"
     }
   ],
   "variable_elements": [],
   "sound_elements": [],
   "language_map": {
     "en_us": {
-      "key.energized.test": "Test",
       "block.energized.animated_cog": "Animated Cog",
       "itemGroup.tabenergized": "Energized"
     }
