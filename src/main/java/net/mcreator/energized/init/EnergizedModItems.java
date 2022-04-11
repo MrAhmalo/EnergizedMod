@@ -19,7 +19,7 @@ import java.util.ArrayList;
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
 public class EnergizedModItems {
 	private static final List<Item> REGISTRY = new ArrayList<>();
-	public static final Item ANIMATED_COG = register(EnergizedModBlocks.ANIMATED_COG, CreativeModeTab.TAB_BUILDING_BLOCKS);
+	public static final Item ANIMATED_COG = register(EnergizedModBlocks.ANIMATED_COG, EnergizedModTabs.TAB_ENERGIZED);
 
 	private static Item register(Item item) {
 		REGISTRY.add(item);
