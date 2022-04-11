@@ -23,9 +23,9 @@ import java.util.ArrayList;
 public class EnergizedModItems {
 	private static final List<Item> REGISTRY = new ArrayList<>();
 	public static final Item ANIMATED_COG = register(EnergizedModBlocks.ANIMATED_COG, EnergizedModTabs.TAB_ENERGIZED);
-	public static final Item LIGHTNING_COMPRESSOR = register(EnergizedModBlocks.LIGHTNING_COMPRESSOR, EnergizedModTabs.TAB_ENERGIZED);
 	public static final Item ELECTRONIC_BOTTLE = register(new ElectronicBottleItem());
 	public static final Item EMPTY_ELECTRONIC_BOTTLE = register(new EmptyElectronicBottleItem());
+	public static final Item LIGHTNING_COMPRESSOR = register(EnergizedModBlocks.LIGHTNING_COMPRESSOR, EnergizedModTabs.TAB_ENERGIZED);
 
 	private static Item register(Item item) {
 		REGISTRY.add(item);
