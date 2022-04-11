@@ -7,14 +7,20 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "energized"
+    },
+    {
+      "name": "AnimatedCog",
+      "type": "block",
+      "sortid": 1,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "animated_cog"
     }
   ],
   "variable_elements": [],
   "sound_elements": [],
   "language_map": {
-    "en_us": {
-      "itemGroup.tabenergized": "Energized"
-    }
+    "en_us": {}
   },
   "foldersRoot": {
     "name": "~",
