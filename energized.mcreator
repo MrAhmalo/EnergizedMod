@@ -14,7 +14,8 @@
       "sortid": 1,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "animated_cog"
+      "registry_name": "animated_cog",
+      "path": "~/Blocks"
     }
   ],
   "variable_elements": [],
@@ -27,7 +28,24 @@
   },
   "foldersRoot": {
     "name": "~",
-    "children": []
+    "children": [
+      {
+        "name": "Blocks",
+        "children": []
+      },
+      {
+        "name": "Items",
+        "children": []
+      },
+      {
+        "name": "Recipes",
+        "children": []
+      },
+      {
+        "name": "GUI",
+        "children": []
+      }
+    ]
   },
   "workspaceSettings": {
     "modid": "energized",
