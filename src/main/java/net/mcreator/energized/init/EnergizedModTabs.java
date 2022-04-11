@@ -7,7 +7,6 @@ package net.mcreator.energized.init;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.api.distmarker.Dist;
 
-import net.minecraft.world.item.Items;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.CreativeModeTab;
 
@@ -18,7 +17,7 @@ public class EnergizedModTabs {
 		TAB_ENERGIZED = new CreativeModeTab("tabenergized") {
 			@Override
 			public ItemStack makeIcon() {
-				return new ItemStack(Items.BLAZE_ROD);
+				return new ItemStack(EnergizedModBlocks.ANIMATED_COG);
 			}
 
 			@OnlyIn(Dist.CLIENT)

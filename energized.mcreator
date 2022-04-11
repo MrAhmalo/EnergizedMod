@@ -20,7 +20,10 @@
   "variable_elements": [],
   "sound_elements": [],
   "language_map": {
-    "en_us": {}
+    "en_us": {
+      "block.energized.animated_cog": "Animated Cog",
+      "itemGroup.tabenergized": "Energized"
+    }
   },
   "foldersRoot": {
     "name": "~",

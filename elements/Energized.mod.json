@@ -4,7 +4,7 @@
   "definition": {
     "name": "Energized",
     "icon": {
-      "value": "Items.BLAZE_ROD"
+      "value": "CUSTOM:AnimatedCog"
     },
     "showSearch": false
   }
