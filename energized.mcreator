@@ -13,7 +13,7 @@
     "modid": "energized",
     "modName": "Energized",
     "version": "1.0.0",
-    "author": "DracoFAAD029, Ahmalo",
+    "author": "DracoFAAD029, Ahmalo, Cornhub",
     "websiteURL": "https://mrahmalo.github.io/cubistic-games/",
     "license": "Academic Free License v3.0",
     "disableForgeVersionCheck": true,
@@ -23,6 +23,7 @@
     "dependants": [],
     "mcreatorDependencies": [],
     "currentGenerator": "forge-1.17.1",
+    "credits": "Created using mod maker MCreator - https://mcreator.net/about",
     "modElementsPackage": "net.mcreator.energized",
     "lockBaseModFiles": false
   },
