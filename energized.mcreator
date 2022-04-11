@@ -6,7 +6,8 @@
       "sortid": 1,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "energized"
+      "registry_name": "energized",
+      "path": "~/GUI"
     },
     {
       "name": "AnimatedCog",
@@ -16,14 +17,94 @@
       "locked_code": false,
       "registry_name": "animated_cog",
       "path": "~/Blocks"
+    },
+    {
+      "name": "ElectronicBottleFoodEaten",
+      "type": "procedure",
+      "sortid": 2,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "electronic_bottle_food_eaten",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "EmptyElectronicBottle",
+      "type": "item",
+      "sortid": 3,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "empty_electronic_bottle",
+      "path": "~/Items"
+    },
+    {
+      "name": "ElectronicBottleItemIsDroppedByPlayer",
+      "type": "procedure",
+      "sortid": 4,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "electronic_bottle_item_is_dropped_by_player",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "ElectronicBottle",
+      "type": "food",
+      "sortid": 2,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "electronic_bottle",
+      "path": "~/Items"
     }
   ],
   "variable_elements": [],
   "sound_elements": [],
   "language_map": {
     "en_us": {
+      "item.energized.electronic_bottle": "Filled electronic bottle",
       "block.energized.animated_cog": "Animated Cog",
-      "itemGroup.tabenergized": "Energized"
+      "itemGroup.tabenergized": "Energized",
+      "item.energized.empty_electronic_bottle": "Electronic bottle"
     }
   },
   "foldersRoot": {
