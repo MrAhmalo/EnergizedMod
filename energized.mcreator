@@ -3,7 +3,7 @@
     {
       "name": "Energized",
       "type": "tab",
-      "sortid": 1,
+      "sortid": 5,
       "compiles": true,
       "locked_code": false,
       "registry_name": "energized",
@@ -21,7 +21,7 @@
     {
       "name": "ElectronicBottleFoodEaten",
       "type": "procedure",
-      "sortid": 2,
+      "sortid": 6,
       "compiles": true,
       "locked_code": false,
       "registry_name": "electronic_bottle_food_eaten",
@@ -53,7 +53,7 @@
     {
       "name": "EmptyElectronicBottle",
       "type": "item",
-      "sortid": 3,
+      "sortid": 4,
       "compiles": true,
       "locked_code": false,
       "registry_name": "empty_electronic_bottle",
@@ -62,7 +62,7 @@
     {
       "name": "ElectronicBottleItemIsDroppedByPlayer",
       "type": "procedure",
-      "sortid": 4,
+      "sortid": 7,
       "compiles": true,
       "locked_code": false,
       "registry_name": "electronic_bottle_item_is_dropped_by_player",
@@ -90,7 +90,7 @@
     {
       "name": "ElectronicBottle",
       "type": "food",
-      "sortid": 2,
+      "sortid": 3,
       "compiles": true,
       "locked_code": false,
       "registry_name": "electronic_bottle",
@@ -99,7 +99,7 @@
     {
       "name": "LightningCompressor",
       "type": "block",
-      "sortid": 5,
+      "sortid": 2,
       "compiles": true,
       "locked_code": false,
       "registry_name": "lightning_compressor",

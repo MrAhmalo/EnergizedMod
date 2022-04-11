@@ -12,6 +12,7 @@ import net.minecraftforge.api.distmarker.Dist;
 
 import net.minecraft.world.level.block.Block;
 
+import net.mcreator.energized.block.LightningCompressorBlock;
 import net.mcreator.energized.block.AnimatedCogBlock;
 
 import java.util.List;
@@ -21,6 +22,7 @@ import java.util.ArrayList;
 public class EnergizedModBlocks {
 	private static final List<Block> REGISTRY = new ArrayList<>();
 	public static final Block ANIMATED_COG = register(new AnimatedCogBlock());
+	public static final Block LIGHTNING_COMPRESSOR = register(new LightningCompressorBlock());
 
 	private static Block register(Block block) {
 		REGISTRY.add(block);
@@ -37,6 +39,7 @@ public class EnergizedModBlocks {
 		@SubscribeEvent
 		public static void clientSetup(FMLClientSetupEvent event) {
 			AnimatedCogBlock.registerRenderLayer();
+			LightningCompressorBlock.registerRenderLayer();
 		}
 	}
 }
