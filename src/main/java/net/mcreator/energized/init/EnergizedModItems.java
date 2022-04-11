@@ -15,7 +15,6 @@ import net.minecraft.world.item.BlockItem;
 
 import net.mcreator.energized.item.EmptyElectronicBottleItem;
 import net.mcreator.energized.item.ElectronicBottleItem;
-import net.mcreator.energized.item.CompressedLightningItem;
 
 import java.util.List;
 import java.util.ArrayList;
@@ -27,7 +26,6 @@ public class EnergizedModItems {
 	public static final Item LIGHTNING_COMPRESSOR = register(EnergizedModBlocks.LIGHTNING_COMPRESSOR, EnergizedModTabs.TAB_ENERGIZED);
 	public static final Item ELECTRONIC_BOTTLE = register(new ElectronicBottleItem());
 	public static final Item EMPTY_ELECTRONIC_BOTTLE = register(new EmptyElectronicBottleItem());
-	public static final Item COMPRESSED_LIGHTNING_BUCKET = register(new CompressedLightningItem());
 
 	private static Item register(Item item) {
 		REGISTRY.add(item);
