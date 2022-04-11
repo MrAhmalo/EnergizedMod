@@ -233,6 +233,7 @@
     "license": "Academic Free License v3.0",
     "disableForgeVersionCheck": true,
     "serverSideOnly": false,
+    "modPicture": "energizedlogo",
     "requiredMods": [],
     "dependencies": [],
     "dependants": [],
