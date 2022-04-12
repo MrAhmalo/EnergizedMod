@@ -171,35 +171,6 @@
       "path": "~/Procuderes"
     },
     {
-      "name": "MachineUpdateTick",
-      "type": "procedure",
-      "sortid": 20,
-      "compiles": false,
-      "locked_code": false,
-      "registry_name": "machine_update_tick",
-      "metadata": {
-        "dependencies": [
-          {
-            "name": "x",
-            "type": "number"
-          },
-          {
-            "name": "y",
-            "type": "number"
-          },
-          {
-            "name": "z",
-            "type": "number"
-          },
-          {
-            "name": "world",
-            "type": "world"
-          }
-        ]
-      },
-      "path": "~/LightningCollector/Machine"
-    },
-    {
       "name": "AnimatedCogRecipe",
       "type": "recipe",
       "sortid": 10,
