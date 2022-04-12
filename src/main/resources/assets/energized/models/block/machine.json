@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "energized:blocks/machine_top",
+    "up": "energized:blocks/machine_top",
+    "north": "energized:blocks/machine_side",
+    "east": "energized:blocks/machine_side",
+    "south": "energized:blocks/machine_side",
+    "west": "energized:blocks/machine_side",
+    "particle": "energized:blocks/machine_top"
+  }
+}

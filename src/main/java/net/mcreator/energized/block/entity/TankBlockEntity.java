@@ -8,10 +8,10 @@ import net.minecraftforge.fluids.capability.CapabilityFluidHandler;
 import net.minecraftforge.common.util.LazyOptional;
 import net.minecraftforge.common.capabilities.Capability;
 
+import net.minecraft.world.level.material.Fluids;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.entity.RandomizableContainerBlockEntity;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.inventory.ChestMenu;
 import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.WorldlyContainer;
@@ -19,25 +19,28 @@ import net.minecraft.world.ContainerHelper;
 import net.minecraft.network.protocol.game.ClientboundBlockEntityDataPacket;
 import net.minecraft.network.chat.TextComponent;
 import net.minecraft.network.chat.Component;
+import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.network.Connection;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.core.NonNullList;
 import net.minecraft.core.Direction;
 import net.minecraft.core.BlockPos;
 
-import net.mcreator.energized.init.EnergizedModFluids;
+import net.mcreator.energized.world.inventory.FuelGUIMenu;
 import net.mcreator.energized.init.EnergizedModBlockEntities;
 
 import javax.annotation.Nullable;
 
 import java.util.stream.IntStream;
 
-public class LightningCompressorBlockEntity extends RandomizableContainerBlockEntity implements WorldlyContainer {
-	private NonNullList<ItemStack> stacks = NonNullList.<ItemStack>withSize(9, ItemStack.EMPTY);
+import io.netty.buffer.Unpooled;
+
+public class TankBlockEntity extends RandomizableContainerBlockEntity implements WorldlyContainer {
+	private NonNullList<ItemStack> stacks = NonNullList.<ItemStack>withSize(0, ItemStack.EMPTY);
 	private final LazyOptional<? extends IItemHandler>[] handlers = SidedInvWrapper.create(this, Direction.values());
 
-	public LightningCompressorBlockEntity(BlockPos position, BlockState state) {
-		super(EnergizedModBlockEntities.LIGHTNING_COMPRESSOR, position, state);
+	public TankBlockEntity(BlockPos position, BlockState state) {
+		super(EnergizedModBlockEntities.TANK, position, state);
 	}
 
 	@Override
@@ -90,7 +93,7 @@ public class LightningCompressorBlockEntity extends RandomizableContainerBlockEn
 
 	@Override
 	public Component getDefaultName() {
-		return new TextComponent("lightning_compressor");
+		return new TextComponent("tank");
 	}
 
 	@Override
@@ -100,12 +103,12 @@ public class LightningCompressorBlockEntity extends RandomizableContainerBlockEn
 
 	@Override
 	public AbstractContainerMenu createMenu(int id, Inventory inventory) {
-		return ChestMenu.threeRows(id, inventory);
+		return new FuelGUIMenu(id, inventory, new FriendlyByteBuf(Unpooled.buffer()).writeBlockPos(this.worldPosition));
 	}
 
 	@Override
 	public Component getDisplayName() {
-		return new TextComponent("Lightning Compressor");
+		return new TextComponent("Tank");
 	}
 
 	@Override
@@ -138,8 +141,8 @@ public class LightningCompressorBlockEntity extends RandomizableContainerBlockEn
 		return true;
 	}
 
-	private final FluidTank fluidTank = new FluidTank(8000, fs -> {
-		if (fs.getFluid() == EnergizedModFluids.COMPRESSED_LIGHTNING)
+	private final FluidTank fluidTank = new FluidTank(1000, fs -> {
+		if (fs.getFluid() == Fluids.LAVA)
 			return true;
 		return false;
 	}) {

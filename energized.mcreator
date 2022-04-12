@@ -129,15 +129,6 @@
       "path": "~/Fluids"
     },
     {
-      "name": "LightningCompressorRecipe",
-      "type": "recipe",
-      "sortid": 10,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "lightning_compressor_recipe",
-      "path": "~/Recipes"
-    },
-    {
       "name": "RotatingCogRecipe",
       "type": "recipe",
       "sortid": 11,
@@ -178,6 +169,333 @@
         ]
       },
       "path": "~/Procuderes"
+    },
+    {
+      "name": "MachineUpdateTick",
+      "type": "procedure",
+      "sortid": 20,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "machine_update_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/LightningCollector/Machine"
+    },
+    {
+      "name": "AnimatedCogRecipe",
+      "type": "recipe",
+      "sortid": 10,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "animated_cog_recipe",
+      "path": "~/Recipes"
+    },
+    {
+      "name": "TankOnBlockRightKlicked",
+      "type": "procedure",
+      "sortid": 19,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "tank_on_block_right_klicked",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "blockstate",
+            "type": "blockstate"
+          },
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/LightningCollector/TankBlock"
+    },
+    {
+      "name": "Tank",
+      "type": "block",
+      "sortid": 18,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "tank",
+      "path": "~/LightningCollector/TankBlock"
+    },
+    {
+      "name": "Machine",
+      "type": "block",
+      "sortid": 20,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "machine",
+      "path": "~/LightningCollector/Machine"
+    },
+    {
+      "name": "Progress2",
+      "type": "procedure",
+      "sortid": 14,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "progress_2",
+      "metadata": {
+        "return_type": "logic",
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/LightningCollector/GUI"
+    },
+    {
+      "name": "Progress1",
+      "type": "procedure",
+      "sortid": 13,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "progress_1",
+      "metadata": {
+        "return_type": "logic",
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/LightningCollector/GUI"
+    },
+    {
+      "name": "Progress4",
+      "type": "procedure",
+      "sortid": 16,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "progress_4",
+      "metadata": {
+        "return_type": "logic",
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/LightningCollector/GUI"
+    },
+    {
+      "name": "Progress3",
+      "type": "procedure",
+      "sortid": 15,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "progress_3",
+      "metadata": {
+        "return_type": "logic",
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/LightningCollector/GUI"
+    },
+    {
+      "name": "TankUpdateTick",
+      "type": "procedure",
+      "sortid": 18,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "tank_update_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/LightningCollector/TankBlock"
+    },
+    {
+      "name": "FuelGUI",
+      "type": "gui",
+      "sortid": 12,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "fuel_gui",
+      "path": "~/LightningCollector/GUI"
+    },
+    {
+      "name": "Progress5",
+      "type": "procedure",
+      "sortid": 17,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "progress_5",
+      "metadata": {
+        "return_type": "logic",
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/LightningCollector/GUI"
+    },
+    {
+      "name": "MachineOnBlockRightKlicked",
+      "type": "procedure",
+      "sortid": 21,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "machine_on_block_right_klicked",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "blockstate",
+            "type": "blockstate"
+          },
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/LightningCollector/Machine"
+    },
+    {
+      "name": "LightningCompressorRecipe",
+      "type": "recipe",
+      "sortid": 10,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "lightning_compressor_recipe",
+      "path": "~/Recipes"
     }
   ],
   "variable_elements": [],
@@ -197,46 +515,28 @@
     },
     "de_de": {
       "item.energized.electronic_bottle": "Gefüllte Elektronische Flasche",
-      "block.energized.lightning_compressor": "Blitz Kompressor",
       "fluid.energized.compressed_lightning": "Compressed Lightning",
       "block.energized.animated_cog": "Drehendes Zahnrad",
       "item.energized.compressed_lightning_bucket": "Compressed Lightning Bucket",
+      "block.energized.machine": "Machine",
       "advancements.get_an_electric_shock.title": "Bekomme einen Elektroschock",
       "itemGroup.tabenergized": "Energized",
       "advancements.get_an_electric_shock.descr": "Trinke eine Elektronische Flasche",
-      "block.energized.compressed_lightning": "Compressed Lightning",
-      "item.energized.empty_electronic_bottle": "Elektronische Flasche"
+      "item.energized.empty_electronic_bottle": "Elektronische Flasche",
+      "block.energized.lightning_compressor": "Blitz Kompressor",
+      "block.energized.tank": "Tank",
+      "block.energized.compressed_lightning": "Compressed Lightning"
     }
   },
   "foldersRoot": {
     "name": "~",
     "children": [
       {
-        "name": "Plants",
-        "children": []
-      },
-      {
         "name": "Advancements",
         "children": []
       },
       {
         "name": "Blocks",
-        "children": []
-      },
-      {
-        "name": "LootTables",
-        "children": []
-      },
-      {
-        "name": "Tags",
-        "children": []
-      },
-      {
-        "name": "Conditions",
-        "children": []
-      },
-      {
-        "name": "Potion Effects",
         "children": []
       },
       {
@@ -256,31 +556,7 @@
         "children": []
       },
       {
-        "name": "Biomes",
-        "children": []
-      },
-      {
-        "name": "Tools",
-        "children": []
-      },
-      {
-        "name": "Particles",
-        "children": []
-      },
-      {
         "name": "Recipes",
-        "children": []
-      },
-      {
-        "name": "Entities",
-        "children": []
-      },
-      {
-        "name": "Structures",
-        "children": []
-      },
-      {
-        "name": "Armors",
         "children": []
       },
       {
@@ -288,8 +564,21 @@
         "children": []
       },
       {
-        "name": "CustomElements",
-        "children": []
+        "name": "LightningCollector",
+        "children": [
+          {
+            "name": "GUI",
+            "children": []
+          },
+          {
+            "name": "TankBlock",
+            "children": []
+          },
+          {
+            "name": "Machine",
+            "children": []
+          }
+        ]
       }
     ]
   },

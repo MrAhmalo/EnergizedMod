@@ -1,23 +1,6 @@
 package net.mcreator.energized.procedures;
 
-import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fluids.capability.IFluidHandler;
-import net.minecraftforge.fluids.capability.CapabilityFluidHandler;
-import net.minecraftforge.fluids.FluidStack;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.eventbus.api.Event;
-import net.minecraftforge.event.entity.EntityJoinWorldEvent;
-
-import net.minecraft.world.level.block.entity.BlockEntity;
-import net.minecraft.world.level.LevelAccessor;
-import net.minecraft.world.entity.LightningBolt;
-import net.minecraft.world.entity.Entity;
-import net.minecraft.core.BlockPos;
-
-import net.mcreator.energized.init.EnergizedModFluids;
-import net.mcreator.energized.init.EnergizedModBlocks;
-
-import javax.annotation.Nullable;
 
 @Mod.EventBusSubscriber
 public class LightningCompressorLightningStruckProcedure {
