@@ -1,19 +1,55 @@
 
 package net.mcreator.energized.block;
 
+import net.minecraftforge.fmllegacy.network.NetworkHooks;
+import net.minecraftforge.api.distmarker.OnlyIn;
+import net.minecraftforge.api.distmarker.Dist;
+
+import net.minecraft.world.phys.BlockHitResult;
+import net.minecraft.world.level.storage.loot.LootContext;
 import net.minecraft.world.level.material.Material;
-import net.minecraft.sounds.SoundEvent;
-import net.minecraft.world.level.block.state.BlockBehaviour.Properties;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.block.entity.BlockEntity;
+import net.minecraft.world.level.block.SoundType;
+import net.minecraft.world.level.block.EntityBlock;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.Level;
+import net.minecraft.world.level.BlockGetter;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.inventory.AbstractContainerMenu;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.entity.player.Inventory;
+import net.minecraft.world.MenuProvider;
+import net.minecraft.world.InteractionResult;
+import net.minecraft.world.InteractionHand;
+import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.server.level.ServerLevel;
+import net.minecraft.network.chat.TextComponent;
+import net.minecraft.network.chat.Component;
+import net.minecraft.network.FriendlyByteBuf;
+import net.minecraft.core.BlockPos;
+import net.minecraft.client.renderer.RenderType;
+import net.minecraft.client.renderer.ItemBlockRenderTypes;
+
+import net.mcreator.energized.world.inventory.FuelGUIMenu;
+import net.mcreator.energized.procedures.MachineUpdateTickProcedure;
+import net.mcreator.energized.init.EnergizedModBlocks;
+import net.mcreator.energized.block.entity.MachineBlockEntity;
+
+import java.util.Random;
+import java.util.List;
+import java.util.Collections;
+
+import io.netty.buffer.Unpooled;
 
 public class MachineBlock extends Block
 		implements
 
 			EntityBlock {
-
 	public MachineBlock() {
 		super(BlockBehaviour.Properties.of(Material.METAL).sound(SoundType.METAL).strength(6f, 7f).noOcclusion()
 				.isRedstoneConductor((bs, br, bp) -> false));
-
 		setRegistryName("machine");
 	}
 
@@ -24,7 +60,6 @@ public class MachineBlock extends Block
 
 	@Override
 	public List<ItemStack> getDrops(BlockState state, LootContext.Builder builder) {
-
 		List<ItemStack> dropsOriginal = super.getDrops(state, builder);
 		if (!dropsOriginal.isEmpty())
 			return dropsOriginal;
@@ -45,7 +80,6 @@ public class MachineBlock extends Block
 		int z = pos.getZ();
 
 		MachineUpdateTickProcedure.execute(world, x, y, z);
-
 		world.getBlockTicks().scheduleTick(pos, this, 10);
 	}
 
@@ -65,7 +99,6 @@ public class MachineBlock extends Block
 				}
 			}, pos);
 		}
-
 		return InteractionResult.SUCCESS;
 	}
 
@@ -91,5 +124,4 @@ public class MachineBlock extends Block
 	public static void registerRenderLayer() {
 		ItemBlockRenderTypes.setRenderLayer(EnergizedModBlocks.MACHINE, renderType -> renderType == RenderType.cutout());
 	}
-
 }
