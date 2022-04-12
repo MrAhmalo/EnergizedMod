@@ -526,8 +526,8 @@
       "block.energized.compressed_lightning": "Compressed Lightning"
     },
     "de_de": {
-      "item.energized.electronic_bottle": "Gefüllte Elektronische Flasche",
       "block.energized.lightning_summoner": "Lightning Summoner",
+      "item.energized.electronic_bottle": "Gefüllte Elektronische Flasche",
       "fluid.energized.compressed_lightning": "Compressed Lightning",
       "block.energized.animated_cog": "Drehendes Zahnrad",
       "item.energized.compressed_lightning_bucket": "Compressed Lightning Bucket",
@@ -545,31 +545,19 @@
     "name": "~",
     "children": [
       {
-        "name": "Advancements",
-        "children": []
-      },
-      {
-        "name": "Blocks",
-        "children": []
-      },
-      {
-        "name": "GUI",
-        "children": []
-      },
-      {
-        "name": "Procuderes",
-        "children": []
-      },
-      {
-        "name": "Fluids",
-        "children": []
-      },
-      {
         "name": "Items",
         "children": []
       },
       {
         "name": "Recipes",
+        "children": []
+      },
+      {
+        "name": "Advancements",
+        "children": []
+      },
+      {
+        "name": "Blocks",
         "children": []
       },
       {
@@ -584,14 +572,26 @@
             "children": []
           },
           {
-            "name": "TankBlock",
+            "name": "Machine",
             "children": []
           },
           {
-            "name": "Machine",
+            "name": "TankBlock",
             "children": []
           }
         ]
+      },
+      {
+        "name": "GUI",
+        "children": []
+      },
+      {
+        "name": "Procuderes",
+        "children": []
+      },
+      {
+        "name": "Fluids",
+        "children": []
       }
     ]
   },
