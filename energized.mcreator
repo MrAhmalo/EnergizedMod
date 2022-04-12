@@ -505,15 +505,6 @@
       "locked_code": false,
       "registry_name": "lightning_summoner",
       "path": "~/Blocks"
-    },
-    {
-      "name": "EmptyElectricBottleRecipe",
-      "type": "recipe",
-      "sortid": 27,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "empty_electric_bottle_recipe",
-      "path": "~/Recipes"
     }
   ],
   "variable_elements": [],
