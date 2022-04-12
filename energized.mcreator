@@ -505,14 +505,23 @@
       "locked_code": false,
       "registry_name": "lightning_summoner",
       "path": "~/Blocks"
+    },
+    {
+      "name": "EmptyElectricBottleRecipe",
+      "type": "recipe",
+      "sortid": 27,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "empty_electric_bottle_recipe",
+      "path": "~/Recipes"
     }
   ],
   "variable_elements": [],
   "sound_elements": [],
   "language_map": {
     "en_us": {
-      "item.energized.electronic_bottle": "Filled electronic bottle",
       "block.energized.lightning_summoner": "Lightning Summoner",
+      "item.energized.electronic_bottle": "Filled electronic bottle",
       "fluid.energized.compressed_lightning": "Compressed Lightning",
       "block.energized.animated_cog": "Rotating Cog",
       "item.energized.compressed_lightning_bucket": "Compressed Lightning Bucket",
@@ -526,8 +535,8 @@
       "block.energized.compressed_lightning": "Compressed Lightning"
     },
     "de_de": {
-      "block.energized.lightning_summoner": "Lightning Summoner",
       "item.energized.electronic_bottle": "Gefüllte Elektronische Flasche",
+      "block.energized.lightning_summoner": "Lightning Summoner",
       "fluid.energized.compressed_lightning": "Compressed Lightning",
       "block.energized.animated_cog": "Drehendes Zahnrad",
       "item.energized.compressed_lightning_bucket": "Compressed Lightning Bucket",
