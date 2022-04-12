@@ -1,12 +1,14 @@
 {
   "item.energized.electronic_bottle": "Gefüllte Elektronische Flasche",
-  "block.energized.lightning_compressor": "Blitz Kompressor",
   "fluid.energized.compressed_lightning": "Blitz Kompressor",
   "block.energized.animated_cog": "Drehendes Zahnrad",
   "item.energized.compressed_lightning_bucket": "Blitz Kompressierter Eimer",
+  "block.energized.machine": "Machine",
   "advancements.get_an_electric_shock.title": "Bekomme einen Elektroschock",
   "itemGroup.tabenergized": "Energized",
   "advancements.get_an_electric_shock.descr": "Trinke eine Elektronische Flasche",
-  "block.energized.compressed_lightning": "Blitz Kompressor",
-  "item.energized.empty_electronic_bottle": "Elektronische Flasche"
+  "item.energized.empty_electronic_bottle": "Elektronische Flasche",
+  "block.energized.lightning_compressor": "Blitz Kompressor",
+  "block.energized.tank": "Tank",
+  "block.energized.compressed_lightning": "Blitz Kompressor"
 }

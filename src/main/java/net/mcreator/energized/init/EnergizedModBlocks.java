@@ -12,6 +12,8 @@ import net.minecraftforge.api.distmarker.Dist;
 
 import net.minecraft.world.level.block.Block;
 
+import net.mcreator.energized.block.TankBlock;
+import net.mcreator.energized.block.MachineBlock;
 import net.mcreator.energized.block.LightningCompressorBlock;
 import net.mcreator.energized.block.CompressedLightningBlock;
 import net.mcreator.energized.block.AnimatedCogBlock;
@@ -25,6 +27,8 @@ public class EnergizedModBlocks {
 	public static final Block ANIMATED_COG = register(new AnimatedCogBlock());
 	public static final Block LIGHTNING_COMPRESSOR = register(new LightningCompressorBlock());
 	public static final Block COMPRESSED_LIGHTNING = register(new CompressedLightningBlock());
+	public static final Block TANK = register(new TankBlock());
+	public static final Block MACHINE = register(new MachineBlock());
 
 	private static Block register(Block block) {
 		REGISTRY.add(block);
@@ -42,6 +46,8 @@ public class EnergizedModBlocks {
 		public static void clientSetup(FMLClientSetupEvent event) {
 			AnimatedCogBlock.registerRenderLayer();
 			LightningCompressorBlock.registerRenderLayer();
+			TankBlock.registerRenderLayer();
+			MachineBlock.registerRenderLayer();
 		}
 	}
 }

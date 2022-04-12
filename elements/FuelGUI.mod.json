@@ -1,0 +1,110 @@
+{
+  "_fv": 24,
+  "_type": "gui",
+  "definition": {
+    "type": 0,
+    "width": 50,
+    "height": 100,
+    "inventoryOffsetX": 0,
+    "inventoryOffsetY": 0,
+    "renderBgLayer": false,
+    "doesPauseGame": false,
+    "components": [
+      {
+        "type": "label",
+        "data": {
+          "text": "Fuel:",
+          "color": {
+            "value": -1,
+            "falpha": 0.0
+          },
+          "name": "Fuel:",
+          "x": 200,
+          "y": 77
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "tank_background.png",
+          "use1Xscale": false,
+          "name": "tank_background.png",
+          "x": 188,
+          "y": 70
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "tank_bar_1.png",
+          "use1Xscale": false,
+          "displayCondition": {
+            "name": "Progress1"
+          },
+          "name": "tank_bar_1.png",
+          "x": 205,
+          "y": 145
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "tank_bar_2.png",
+          "use1Xscale": false,
+          "displayCondition": {
+            "name": "Progress2"
+          },
+          "name": "tank_bar_2.png",
+          "x": 205,
+          "y": 132
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "tank_bar_3.png",
+          "use1Xscale": false,
+          "displayCondition": {
+            "name": "Progress3"
+          },
+          "name": "tank_bar_3.png",
+          "x": 205,
+          "y": 119
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "tank_bar_4.png",
+          "use1Xscale": false,
+          "displayCondition": {
+            "name": "Progress4"
+          },
+          "name": "tank_bar_4.png",
+          "x": 205,
+          "y": 106
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "tank_bar_5.png",
+          "use1Xscale": false,
+          "displayCondition": {
+            "name": "Progress5"
+          },
+          "name": "tank_bar_5.png",
+          "x": 205,
+          "y": 94
+        }
+      }
+    ],
+    "gridSettings": {
+      "sx": 18,
+      "sy": 18,
+      "ox": 11,
+      "oy": 15,
+      "snapOnGrid": false
+    }
+  }
+}
