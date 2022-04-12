@@ -136,7 +136,7 @@ public class TankBlock extends Block
 
 	@OnlyIn(Dist.CLIENT)
 	public static void registerRenderLayer() {
-		ItemBlockRenderTypes.setRenderLayer(EnergizedModBlocks.TANK, renderType -> renderType == RenderType.translucent());
+		ItemBlockRenderTypes.setRenderLayer(EnergizedModBlocks.TANK, renderType -> renderType == RenderType.cutout());
 	}
 
 }
