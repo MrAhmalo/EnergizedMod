@@ -125,9 +125,6 @@
         "value": "LAVA"
       }
     ],
-    "onTickUpdate": {
-      "name": "MachineUpdateTick"
-    },
     "spawnWorldTypes": [],
     "restrictionBiomes": [],
     "blocksToReplace": [

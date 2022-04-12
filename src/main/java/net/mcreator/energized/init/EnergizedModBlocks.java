@@ -27,10 +27,10 @@ public class EnergizedModBlocks {
 	private static final List<Block> REGISTRY = new ArrayList<>();
 	public static final Block ANIMATED_COG = register(new AnimatedCogBlock());
 	public static final Block LIGHTNING_COMPRESSOR = register(new LightningCompressorBlock());
+	public static final Block TANK = register(new TankBlock());
 	public static final Block MACHINE = register(new MachineBlock());
 	public static final Block LIGHTNING_SUMMONER = register(new LightningSummonerBlock());
 	public static final Block COMPRESSED_LIGHTNING = register(new CompressedLightningBlock());
-	public static final Block TANK = register(new TankBlock());
 
 	private static Block register(Block block) {
 		REGISTRY.add(block);
@@ -48,9 +48,9 @@ public class EnergizedModBlocks {
 		public static void clientSetup(FMLClientSetupEvent event) {
 			AnimatedCogBlock.registerRenderLayer();
 			LightningCompressorBlock.registerRenderLayer();
+			TankBlock.registerRenderLayer();
 			MachineBlock.registerRenderLayer();
 			LightningSummonerBlock.registerRenderLayer();
-			TankBlock.registerRenderLayer();
 		}
 	}
 }
