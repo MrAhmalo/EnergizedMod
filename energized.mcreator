@@ -174,7 +174,7 @@
       "name": "MachineUpdateTick",
       "type": "procedure",
       "sortid": 20,
-      "compiles": true,
+      "compiles": false,
       "locked_code": false,
       "registry_name": "machine_update_tick",
       "metadata": {
@@ -496,6 +496,15 @@
       "locked_code": false,
       "registry_name": "lightning_compressor_recipe",
       "path": "~/Recipes"
+    },
+    {
+      "name": "LightningSummoner",
+      "type": "block",
+      "sortid": 22,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "lightning_summoner",
+      "path": "~/Blocks"
     }
   ],
   "variable_elements": [],
@@ -504,6 +513,7 @@
     "en_us": {
       "item.energized.electronic_bottle": "Filled electronic bottle",
       "block.energized.lightning_compressor": "Lightning Compressor",
+      "block.energized.lightning_summoner": "Lightning Summoner",
       "fluid.energized.compressed_lightning": "Compressed Lightning",
       "block.energized.animated_cog": "Rotating Cog",
       "item.energized.compressed_lightning_bucket": "Compressed Lightning Bucket",
@@ -515,6 +525,7 @@
     },
     "de_de": {
       "item.energized.electronic_bottle": "Gefüllte Elektronische Flasche",
+      "block.energized.lightning_summoner": "Lightning Summoner",
       "fluid.energized.compressed_lightning": "Compressed Lightning",
       "block.energized.animated_cog": "Drehendes Zahnrad",
       "item.energized.compressed_lightning_bucket": "Compressed Lightning Bucket",

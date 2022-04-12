@@ -1,0 +1,11 @@
+{
+  "mappings": {
+    "default": {
+      "map": {
+        "0": "lightningsummoneranimtexture",
+        "1": "lightningsummoner"
+      },
+      "name": "default"
+    }
+  }
+}

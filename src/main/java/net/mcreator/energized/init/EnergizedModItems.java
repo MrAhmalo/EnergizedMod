@@ -30,6 +30,7 @@ public class EnergizedModItems {
 	public static final Item COMPRESSED_LIGHTNING_BUCKET = register(new CompressedLightningItem());
 	public static final Item TANK = register(EnergizedModBlocks.TANK, EnergizedModTabs.TAB_ENERGIZED);
 	public static final Item MACHINE = register(EnergizedModBlocks.MACHINE, EnergizedModTabs.TAB_ENERGIZED);
+	public static final Item LIGHTNING_SUMMONER = register(EnergizedModBlocks.LIGHTNING_SUMMONER, EnergizedModTabs.TAB_ENERGIZED);
 
 	private static Item register(Item item) {
 		REGISTRY.add(item);

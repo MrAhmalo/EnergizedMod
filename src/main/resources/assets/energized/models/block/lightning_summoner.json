@@ -1,0 +1,9 @@
+{
+  "parent": "energized:custom/lightningsummoner",
+  "textures": {
+    "all": "energized:blocks/lightningsummoner",
+    "particle": "energized:blocks/lightningsummoner",
+    "0": "energized:blocks/lightningsummoneranimtexture",
+    "1": "energized:blocks/lightningsummoner"
+  }
+}
