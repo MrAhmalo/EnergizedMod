@@ -127,6 +127,57 @@
         "gb": true
       },
       "path": "~/Fluids"
+    },
+    {
+      "name": "LightningCompressorRecipe",
+      "type": "recipe",
+      "sortid": 10,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "lightning_compressor_recipe",
+      "path": "~/Recipes"
+    },
+    {
+      "name": "RotatingCogRecipe",
+      "type": "recipe",
+      "sortid": 11,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "rotating_cog_recipe",
+      "path": "~/Recipes"
+    },
+    {
+      "name": "LightningCompressorLightningStruck",
+      "type": "procedure",
+      "sortid": 12,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "lightning_compressor_lightning_struck",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Procuderes"
     }
   ],
   "variable_elements": [],
@@ -136,7 +187,7 @@
       "item.energized.electronic_bottle": "Filled electronic bottle",
       "block.energized.lightning_compressor": "Lightning Compressor",
       "fluid.energized.compressed_lightning": "Compressed Lightning",
-      "block.energized.animated_cog": "Animated Cog",
+      "block.energized.animated_cog": "Rotating Cog",
       "item.energized.compressed_lightning_bucket": "Compressed Lightning Bucket",
       "advancements.get_an_electric_shock.title": "Get an electric shock",
       "itemGroup.tabenergized": "Energized",
