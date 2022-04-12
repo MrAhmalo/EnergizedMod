@@ -1,6 +1,16 @@
 package net.mcreator.energized.procedures;
 
-import net.minecraftforge.eventbus.api.Event;
+import net.minecraftforge.fluids.capability.IFluidHandler;
+import net.minecraftforge.fluids.capability.CapabilityFluidHandler;
+import net.minecraftforge.fluids.FluidStack;
+
+import net.minecraft.world.level.material.Fluids;
+import net.minecraft.world.level.block.entity.BlockEntity;
+import net.minecraft.world.level.LevelAccessor;
+import net.minecraft.core.Direction;
+import net.minecraft.core.BlockPos;
+
+import java.util.concurrent.atomic.AtomicInteger;
 
 public class TankUpdateTickProcedure {
 	public static void execute(LevelAccessor world, double x, double y, double z) {
