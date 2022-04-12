@@ -145,105 +145,6 @@
       "locked_code": false,
       "registry_name": "lightning_compressor_recipe",
       "path": "~/Recipes"
-    },
-    {
-      "name": "FuelGUI",
-      "type": "gui",
-      "sortid": 12,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "fuel_gui",
-      "path": "~/GUI/Tank"
-    },
-    {
-      "name": "Progression1",
-      "type": "procedure",
-      "sortid": 13,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "progression_1",
-      "metadata": {
-        "return_type": "logic",
-        "dependencies": [
-          {
-            "name": "x",
-            "type": "number"
-          },
-          {
-            "name": "y",
-            "type": "number"
-          },
-          {
-            "name": "z",
-            "type": "number"
-          },
-          {
-            "name": "world",
-            "type": "world"
-          }
-        ]
-      },
-      "path": "~/GUI/Tank"
-    },
-    {
-      "name": "Progression2",
-      "type": "procedure",
-      "sortid": 14,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "progression_2",
-      "metadata": {
-        "return_type": "logic",
-        "dependencies": [
-          {
-            "name": "x",
-            "type": "number"
-          },
-          {
-            "name": "y",
-            "type": "number"
-          },
-          {
-            "name": "z",
-            "type": "number"
-          },
-          {
-            "name": "world",
-            "type": "world"
-          }
-        ]
-      },
-      "path": "~/GUI/Tank"
-    },
-    {
-      "name": "Progression3",
-      "type": "procedure",
-      "sortid": 15,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "progression_3",
-      "metadata": {
-        "return_type": "logic",
-        "dependencies": [
-          {
-            "name": "x",
-            "type": "number"
-          },
-          {
-            "name": "y",
-            "type": "number"
-          },
-          {
-            "name": "z",
-            "type": "number"
-          },
-          {
-            "name": "world",
-            "type": "world"
-          }
-        ]
-      },
-      "path": "~/GUI/Tank"
     }
   ],
   "variable_elements": [],
@@ -278,10 +179,6 @@
     "name": "~",
     "children": [
       {
-        "name": "Plants",
-        "children": []
-      },
-      {
         "name": "Advancements",
         "children": []
       },
@@ -290,29 +187,8 @@
         "children": []
       },
       {
-        "name": "LootTables",
-        "children": []
-      },
-      {
-        "name": "Tags",
-        "children": []
-      },
-      {
-        "name": "Conditions",
-        "children": []
-      },
-      {
-        "name": "Potion Effects",
-        "children": []
-      },
-      {
         "name": "GUI",
-        "children": [
-          {
-            "name": "Tank",
-            "children": []
-          }
-        ]
+        "children": []
       },
       {
         "name": "Procuderes",
@@ -327,31 +203,7 @@
         "children": []
       },
       {
-        "name": "Biomes",
-        "children": []
-      },
-      {
-        "name": "Tools",
-        "children": []
-      },
-      {
-        "name": "Particles",
-        "children": []
-      },
-      {
         "name": "Recipes",
-        "children": []
-      },
-      {
-        "name": "Entities",
-        "children": []
-      },
-      {
-        "name": "Structures",
-        "children": []
-      },
-      {
-        "name": "Armors",
         "children": []
       },
       {
@@ -359,8 +211,17 @@
         "children": []
       },
       {
-        "name": "CustomElements",
-        "children": []
+        "name": "LightningCollector",
+        "children": [
+          {
+            "name": "GUI",
+            "children": []
+          },
+          {
+            "name": "TankBlock",
+            "children": []
+          }
+        ]
       }
     ]
   },
