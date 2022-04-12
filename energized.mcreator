@@ -514,15 +514,25 @@
       "locked_code": false,
       "registry_name": "empty_electric_bottle_recipe",
       "path": "~/Recipes"
+    },
+    {
+      "name": "BlockLocationSaver",
+      "type": "item",
+      "sortid": 28,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "block_location_saver",
+      "path": "~/Items"
     }
   ],
   "variable_elements": [],
   "sound_elements": [],
   "language_map": {
     "en_us": {
-      "item.energized.electronic_bottle": "Filled electronic bottle",
       "block.energized.lightning_summoner": "Lightning Summoner",
+      "item.energized.electronic_bottle": "Filled electronic bottle",
       "fluid.energized.compressed_lightning": "Compressed Lightning",
+      "item.energized.block_location_saver": "Block Location Saver",
       "block.energized.animated_cog": "Rotating Cog",
       "item.energized.compressed_lightning_bucket": "Compressed Lightning Bucket",
       "block.energized.machine": "Machine",
@@ -535,9 +545,10 @@
       "block.energized.compressed_lightning": "Compressed Lightning"
     },
     "de_de": {
-      "block.energized.lightning_summoner": "Lightning Summoner",
       "item.energized.electronic_bottle": "Gefüllte Elektronische Flasche",
+      "block.energized.lightning_summoner": "Lightning Summoner",
       "fluid.energized.compressed_lightning": "Compressed Lightning",
+      "item.energized.block_location_saver": "Block Location Saver",
       "block.energized.animated_cog": "Drehendes Zahnrad",
       "item.energized.compressed_lightning_bucket": "Compressed Lightning Bucket",
       "block.energized.machine": "Machine",
