@@ -24,11 +24,10 @@ import javax.annotation.Nullable;
 public class MachineOnBlockRightKlickedProcedure {
 	@SubscribeEvent
 	public static void onRightClickBlock(PlayerInteractEvent.RightClickBlock event) {
-		Player entity = event.getPlayer();
-		if (event.getHand() != entity.getUsedItemHand())
+		if (event.getHand() != event.getPlayer().getUsedItemHand())
 			return;
 		execute(event, event.getWorld(), event.getPos().getX(), event.getPos().getY(), event.getPos().getZ(),
-				event.getWorld().getBlockState(event.getPos()), entity);
+				event.getWorld().getBlockState(event.getPos()), event.getPlayer());
 	}
 
 	public static void execute(LevelAccessor world, double x, double y, double z, BlockState blockstate, Entity entity) {
@@ -42,7 +41,7 @@ public class MachineOnBlockRightKlickedProcedure {
 		double drainValue = 0;
 		double posY = 0;
 		double posZ = 0;
-		if (blockstate.getBlock() == EnergizedModBlocks.MACHINE) {
+		if (blockstate.getBlock() == EnergizedModBlocks.MACHINE.get()) {
 			if (entity.isShiftKeyDown()) {
 				if (((entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY)).getCount() == 0) {
 					if (event != null && event.isCancelable()) {
@@ -55,9 +54,9 @@ public class MachineOnBlockRightKlickedProcedure {
 								return blockEntity.getTileData().getString(tag);
 							return "";
 						}
-					}.getValue(world, new BlockPos((int) x, (int) y, (int) z), "State")).equals("on")) {
+					}.getValue(world, new BlockPos(x, y, z), "State")).equals("on")) {
 						if (!world.isClientSide()) {
-							BlockPos _bp = new BlockPos((int) x, (int) y, (int) z);
+							BlockPos _bp = new BlockPos(x, y, z);
 							BlockEntity _blockEntity = world.getBlockEntity(_bp);
 							BlockState _bs = world.getBlockState(_bp);
 							if (_blockEntity != null)
@@ -69,7 +68,7 @@ public class MachineOnBlockRightKlickedProcedure {
 							_player.displayClientMessage(new TextComponent("Machine Off"), (true));
 					} else {
 						if (!world.isClientSide()) {
-							BlockPos _bp = new BlockPos((int) x, (int) y, (int) z);
+							BlockPos _bp = new BlockPos(x, y, z);
 							BlockEntity _blockEntity = world.getBlockEntity(_bp);
 							BlockState _bs = world.getBlockState(_bp);
 							if (_blockEntity != null)

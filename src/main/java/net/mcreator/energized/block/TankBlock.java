@@ -1,7 +1,7 @@
 
 package net.mcreator.energized.block;
 
-import net.minecraftforge.fmllegacy.network.NetworkHooks;
+import net.minecraftforge.network.NetworkHooks;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.api.distmarker.Dist;
 
@@ -52,7 +52,6 @@ public class TankBlock extends Block
 	public TankBlock() {
 		super(BlockBehaviour.Properties.of(Material.GLASS).sound(SoundType.GLASS).strength(5f, 6f).requiresCorrectToolForDrops().noOcclusion()
 				.isRedstoneConductor((bs, br, bp) -> false));
-		setRegistryName("tank");
 	}
 
 	@Override
@@ -83,7 +82,7 @@ public class TankBlock extends Block
 	@Override
 	public void onPlace(BlockState blockstate, Level world, BlockPos pos, BlockState oldState, boolean moving) {
 		super.onPlace(blockstate, world, pos, oldState, moving);
-		world.getBlockTicks().scheduleTick(pos, this, 10);
+		world.scheduleTick(pos, this, 10);
 	}
 
 	@Override
@@ -94,7 +93,7 @@ public class TankBlock extends Block
 		int z = pos.getZ();
 
 		TankUpdateTickProcedure.execute(world, x, y, z);
-		world.getBlockTicks().scheduleTick(pos, this, 10);
+		world.scheduleTick(pos, this, 10);
 	}
 
 	@Override
@@ -136,7 +135,7 @@ public class TankBlock extends Block
 
 	@OnlyIn(Dist.CLIENT)
 	public static void registerRenderLayer() {
-		ItemBlockRenderTypes.setRenderLayer(EnergizedModBlocks.TANK, renderType -> renderType == RenderType.cutout());
+		ItemBlockRenderTypes.setRenderLayer(EnergizedModBlocks.TANK.get(), renderType -> renderType == RenderType.cutout());
 	}
 
 }

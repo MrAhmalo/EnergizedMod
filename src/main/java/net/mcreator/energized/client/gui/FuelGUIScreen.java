@@ -16,10 +16,13 @@ import net.mcreator.energized.procedures.Progress3Procedure;
 import net.mcreator.energized.procedures.Progress2Procedure;
 import net.mcreator.energized.procedures.Progress1Procedure;
 
+import java.util.HashMap;
+
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.systems.RenderSystem;
 
 public class FuelGUIScreen extends AbstractContainerScreen<FuelGUIMenu> {
+	private final static HashMap<String, Object> guistate = FuelGUIMenu.guistate;
 	private final Level world;
 	private final int x, y, z;
 	private final Player entity;

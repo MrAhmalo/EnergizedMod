@@ -1,6 +1,7 @@
 
 package net.mcreator.energized.item;
 
+import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.item.UseAnim;
 import net.minecraft.world.item.TooltipFlag;
@@ -26,17 +27,21 @@ public class ElectronicBottleItem extends Item {
 				.food((new FoodProperties.Builder()).nutrition(4).saturationMod(0.3f).alwaysEat()
 
 						.build()));
-		setRegistryName("electronic_bottle");
-	}
-
-	@Override
-	public int getUseDuration(ItemStack stack) {
-		return 40;
 	}
 
 	@Override
 	public UseAnim getUseAnimation(ItemStack itemstack) {
 		return UseAnim.DRINK;
+	}
+
+	@Override
+	public int getUseDuration(ItemStack itemstack) {
+		return 40;
+	}
+
+	@Override
+	public float getDestroySpeed(ItemStack par1ItemStack, BlockState par2Block) {
+		return 0F;
 	}
 
 	@Override
@@ -47,7 +52,7 @@ public class ElectronicBottleItem extends Item {
 
 	@Override
 	public ItemStack finishUsingItem(ItemStack itemstack, Level world, LivingEntity entity) {
-		ItemStack retval = new ItemStack(EnergizedModItems.EMPTY_ELECTRONIC_BOTTLE);
+		ItemStack retval = new ItemStack(EnergizedModItems.EMPTY_ELECTRONIC_BOTTLE.get());
 		super.finishUsingItem(itemstack, world, entity);
 		double x = entity.getX();
 		double y = entity.getY();

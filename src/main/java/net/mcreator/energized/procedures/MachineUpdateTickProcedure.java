@@ -25,7 +25,7 @@ public class MachineUpdateTickProcedure {
 					return blockEntity.getTileData().getString(tag);
 				return "";
 			}
-		}.getValue(world, new BlockPos((int) x, (int) y, (int) z), "State")).equals("on")) {
+		}.getValue(world, new BlockPos(x, y, z), "State")).equals("on")) {
 			if (new Object() {
 				public int getFluidTankLevel(LevelAccessor level, BlockPos pos, int tank) {
 					AtomicInteger _retval = new AtomicInteger(0);
@@ -35,7 +35,7 @@ public class MachineUpdateTickProcedure {
 								.ifPresent(capability -> _retval.set(capability.getFluidInTank(tank).getAmount()));
 					return _retval.get();
 				}
-			}.getFluidTankLevel(world, new BlockPos((int) x, (int) y, (int) z), 1) >= 5) {
+			}.getFluidTankLevel(world, new BlockPos(x, y, z), 1) >= 5) {
 				drainValue = new Object() {
 					public int drainTankSimulate(LevelAccessor level, BlockPos pos, int amount) {
 						AtomicInteger _retval = new AtomicInteger(0);
@@ -45,9 +45,9 @@ public class MachineUpdateTickProcedure {
 									.ifPresent(capability -> _retval.set(capability.drain(amount, IFluidHandler.FluidAction.SIMULATE).getAmount()));
 						return _retval.get();
 					}
-				}.drainTankSimulate(world, new BlockPos((int) x, (int) y, (int) z), 5);
+				}.drainTankSimulate(world, new BlockPos(x, y, z), 5);
 				{
-					BlockEntity _ent = world.getBlockEntity(new BlockPos((int) x, (int) y, (int) z));
+					BlockEntity _ent = world.getBlockEntity(new BlockPos(x, y, z));
 					int _amount = (int) drainValue;
 					if (_ent != null)
 						_ent.getCapability(CapabilityFluidHandler.FLUID_HANDLER_CAPABILITY, null)
@@ -58,14 +58,14 @@ public class MachineUpdateTickProcedure {
 				posY = y - 2;
 				for (int index0 = 0; index0 < (int) (5); index0++) {
 					for (int index1 = 0; index1 < (int) (5); index1++) {
-						if (((world.getBlockState(new BlockPos((int) posX, (int) posY, (int) posZ))).getBlock().getStateDefinition()
+						if (((world.getBlockState(new BlockPos(posX, posY, posZ))).getBlock().getStateDefinition()
 								.getProperty("age")instanceof IntegerProperty _ip
-										? (world.getBlockState(new BlockPos((int) posX, (int) posY, (int) posZ))).getValue(_ip)
+										? (world.getBlockState(new BlockPos(posX, posY, posZ))).getValue(_ip)
 										: -1) < 7) {
 							{
-								int _value = (int) (((world.getBlockState(new BlockPos((int) posX, (int) posY, (int) posZ))).getBlock()
-										.getStateDefinition().getProperty("age")instanceof IntegerProperty _ip
-												? (world.getBlockState(new BlockPos((int) posX, (int) posY, (int) posZ))).getValue(_ip)
+								int _value = (int) (((world.getBlockState(new BlockPos(posX, posY, posZ))).getBlock().getStateDefinition()
+										.getProperty("age")instanceof IntegerProperty _ip
+												? (world.getBlockState(new BlockPos(posX, posY, posZ))).getValue(_ip)
 												: -1)
 										+ 1);
 								BlockPos _pos = new BlockPos((int) posX, (int) posY, (int) posZ);

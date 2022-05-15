@@ -38,7 +38,6 @@ public class LightningCompressorBlock extends Block
 	public LightningCompressorBlock() {
 		super(BlockBehaviour.Properties.of(Material.METAL).sound(SoundType.METAL).strength(1f, 10f).noOcclusion()
 				.isRedstoneConductor((bs, br, bp) -> false));
-		setRegistryName("lightning_compressor");
 	}
 
 	@Override
@@ -111,6 +110,6 @@ public class LightningCompressorBlock extends Block
 
 	@OnlyIn(Dist.CLIENT)
 	public static void registerRenderLayer() {
-		ItemBlockRenderTypes.setRenderLayer(EnergizedModBlocks.LIGHTNING_COMPRESSOR, renderType -> renderType == RenderType.cutout());
+		ItemBlockRenderTypes.setRenderLayer(EnergizedModBlocks.LIGHTNING_COMPRESSOR.get(), renderType -> renderType == RenderType.cutout());
 	}
 }

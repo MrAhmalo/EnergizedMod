@@ -90,15 +90,6 @@
       "path": "~/Procuderes"
     },
     {
-      "name": "ElectronicBottle",
-      "type": "food",
-      "sortid": 7,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "electronic_bottle",
-      "path": "~/Items"
-    },
-    {
       "name": "LightningCompressor",
       "type": "block",
       "sortid": 2,
@@ -514,14 +505,23 @@
       "locked_code": false,
       "registry_name": "empty_electric_bottle_recipe",
       "path": "~/Recipes"
+    },
+    {
+      "name": "ElectronicBottle",
+      "type": "item",
+      "sortid": 28,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "electronic_bottle",
+      "path": "~/Items"
     }
   ],
   "variable_elements": [],
   "sound_elements": [],
   "language_map": {
     "en_us": {
-      "item.energized.electronic_bottle": "Filled electronic bottle",
       "block.energized.lightning_summoner": "Lightning Summoner",
+      "item.energized.electronic_bottle": "Filled electronic bottle",
       "fluid.energized.compressed_lightning": "Compressed Lightning",
       "block.energized.animated_cog": "Rotating Cog",
       "item.energized.compressed_lightning_bucket": "Compressed Lightning Bucket",
@@ -535,8 +535,8 @@
       "block.energized.compressed_lightning": "Compressed Lightning"
     },
     "de_de": {
+      "item.energized.electronic_bottle": "Gefï¿½llte Elektronische Flasche",
       "block.energized.lightning_summoner": "Lightning Summoner",
-      "item.energized.electronic_bottle": "Gefüllte Elektronische Flasche",
       "fluid.energized.compressed_lightning": "Compressed Lightning",
       "block.energized.animated_cog": "Drehendes Zahnrad",
       "item.energized.compressed_lightning_bucket": "Compressed Lightning Bucket",
@@ -617,10 +617,10 @@
     "dependencies": [],
     "dependants": [],
     "mcreatorDependencies": [],
-    "currentGenerator": "forge-1.17.1",
-    "credits": " ",
+    "currentGenerator": "forge-1.18.2",
+    "credits": "Created using mod maker MCreator - https://mcreator.net/about",
     "modElementsPackage": "net.mcreator.energized",
     "lockBaseModFiles": false
   },
-  "mcreatorVersion": 202100354000
+  "mcreatorVersion": 202200120510
 }

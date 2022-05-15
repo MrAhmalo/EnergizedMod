@@ -19,7 +19,7 @@ public class Progress2Procedure {
 							.ifPresent(capability -> _retval.set(capability.getFluidInTank(tank).getAmount()));
 				return _retval.get();
 			}
-		}.getFluidTankLevel(world, new BlockPos((int) x, (int) y, (int) z), 1) > new Object() {
+		}.getFluidTankLevel(world, new BlockPos(x, y, z), 1) > (new Object() {
 			public int getFluidTankCapacity(LevelAccessor level, BlockPos pos, int tank) {
 				AtomicInteger _retval = new AtomicInteger(0);
 				BlockEntity _ent = level.getBlockEntity(pos);
@@ -28,7 +28,7 @@ public class Progress2Procedure {
 							.ifPresent(capability -> _retval.set(capability.getTankCapacity(tank)));
 				return _retval.get();
 			}
-		}.getFluidTankCapacity(world, new BlockPos((int) x, (int) y, (int) z), 1) / 6 * 2 && new Object() {
+		}.getFluidTankCapacity(world, new BlockPos(x, y, z), 1) / 6) * 2 && new Object() {
 			public int getFluidTankLevel(LevelAccessor level, BlockPos pos, int tank) {
 				AtomicInteger _retval = new AtomicInteger(0);
 				BlockEntity _ent = level.getBlockEntity(pos);
@@ -37,7 +37,7 @@ public class Progress2Procedure {
 							.ifPresent(capability -> _retval.set(capability.getFluidInTank(tank).getAmount()));
 				return _retval.get();
 			}
-		}.getFluidTankLevel(world, new BlockPos((int) x, (int) y, (int) z), 1) <= new Object() {
+		}.getFluidTankLevel(world, new BlockPos(x, y, z), 1) <= (new Object() {
 			public int getFluidTankCapacity(LevelAccessor level, BlockPos pos, int tank) {
 				AtomicInteger _retval = new AtomicInteger(0);
 				BlockEntity _ent = level.getBlockEntity(pos);
@@ -46,7 +46,7 @@ public class Progress2Procedure {
 							.ifPresent(capability -> _retval.set(capability.getTankCapacity(tank)));
 				return _retval.get();
 			}
-		}.getFluidTankCapacity(world, new BlockPos((int) x, (int) y, (int) z), 1) / 6 * 3) {
+		}.getFluidTankCapacity(world, new BlockPos(x, y, z), 1) / 6) * 3) {
 			return true;
 		}
 		return false;

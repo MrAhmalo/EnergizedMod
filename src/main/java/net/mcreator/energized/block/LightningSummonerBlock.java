@@ -28,7 +28,6 @@ public class LightningSummonerBlock extends Block {
 	public LightningSummonerBlock() {
 		super(BlockBehaviour.Properties.of(Material.STONE).sound(SoundType.METAL).strength(1f, 10f).noOcclusion()
 				.isRedstoneConductor((bs, br, bp) -> false));
-		setRegistryName("lightning_summoner");
 	}
 
 	@Override
@@ -57,7 +56,7 @@ public class LightningSummonerBlock extends Block {
 
 	@OnlyIn(Dist.CLIENT)
 	public static void registerRenderLayer() {
-		ItemBlockRenderTypes.setRenderLayer(EnergizedModBlocks.LIGHTNING_SUMMONER, renderType -> renderType == RenderType.cutout());
+		ItemBlockRenderTypes.setRenderLayer(EnergizedModBlocks.LIGHTNING_SUMMONER.get(), renderType -> renderType == RenderType.cutout());
 	}
 
 }

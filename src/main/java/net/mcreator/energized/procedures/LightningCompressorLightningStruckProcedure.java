@@ -23,8 +23,7 @@ import javax.annotation.Nullable;
 public class LightningCompressorLightningStruckProcedure {
 	@SubscribeEvent
 	public static void onEntitySpawned(EntityJoinWorldEvent event) {
-		Entity entity = event.getEntity();
-		execute(event, event.getWorld(), entity.getX(), entity.getY(), entity.getZ(), entity);
+		execute(event, event.getWorld(), event.getEntity().getX(), event.getEntity().getY(), event.getEntity().getZ(), event.getEntity());
 	}
 
 	public static void execute(LevelAccessor world, double x, double y, double z, Entity entity) {
@@ -35,13 +34,13 @@ public class LightningCompressorLightningStruckProcedure {
 		if (entity == null)
 			return;
 		if (entity instanceof LightningBolt) {
-			if ((world.getBlockState(new BlockPos((int) x, (int) y, (int) z))).getBlock() == EnergizedModBlocks.LIGHTNING_COMPRESSOR) {
+			if ((world.getBlockState(new BlockPos(x, y, z))).getBlock() == EnergizedModBlocks.LIGHTNING_COMPRESSOR.get()) {
 				{
-					BlockEntity _ent = world.getBlockEntity(new BlockPos((int) x, (int) y, (int) z));
+					BlockEntity _ent = world.getBlockEntity(new BlockPos(x, y, z));
 					int _amount = 1000;
 					if (_ent != null)
 						_ent.getCapability(CapabilityFluidHandler.FLUID_HANDLER_CAPABILITY, null).ifPresent(capability -> capability
-								.fill(new FluidStack(EnergizedModFluids.COMPRESSED_LIGHTNING, _amount), IFluidHandler.FluidAction.EXECUTE));
+								.fill(new FluidStack(EnergizedModFluids.COMPRESSED_LIGHTNING.get(), _amount), IFluidHandler.FluidAction.EXECUTE));
 				}
 			}
 		}

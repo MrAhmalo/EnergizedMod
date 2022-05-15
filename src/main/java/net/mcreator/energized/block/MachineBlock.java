@@ -1,7 +1,7 @@
 
 package net.mcreator.energized.block;
 
-import net.minecraftforge.fmllegacy.network.NetworkHooks;
+import net.minecraftforge.network.NetworkHooks;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.api.distmarker.Dist;
 
@@ -50,7 +50,6 @@ public class MachineBlock extends Block
 	public MachineBlock() {
 		super(BlockBehaviour.Properties.of(Material.METAL).sound(SoundType.METAL).strength(6f, 7f).noOcclusion()
 				.isRedstoneConductor((bs, br, bp) -> false));
-		setRegistryName("machine");
 	}
 
 	@Override
@@ -69,7 +68,7 @@ public class MachineBlock extends Block
 	@Override
 	public void onPlace(BlockState blockstate, Level world, BlockPos pos, BlockState oldState, boolean moving) {
 		super.onPlace(blockstate, world, pos, oldState, moving);
-		world.getBlockTicks().scheduleTick(pos, this, 10);
+		world.scheduleTick(pos, this, 10);
 	}
 
 	@Override
@@ -80,7 +79,7 @@ public class MachineBlock extends Block
 		int z = pos.getZ();
 
 		MachineUpdateTickProcedure.execute(world, x, y, z);
-		world.getBlockTicks().scheduleTick(pos, this, 10);
+		world.scheduleTick(pos, this, 10);
 	}
 
 	@Override
@@ -122,6 +121,6 @@ public class MachineBlock extends Block
 
 	@OnlyIn(Dist.CLIENT)
 	public static void registerRenderLayer() {
-		ItemBlockRenderTypes.setRenderLayer(EnergizedModBlocks.MACHINE, renderType -> renderType == RenderType.cutout());
+		ItemBlockRenderTypes.setRenderLayer(EnergizedModBlocks.MACHINE.get(), renderType -> renderType == RenderType.cutout());
 	}
 }

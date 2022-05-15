@@ -28,7 +28,6 @@ public class AnimatedCogBlock extends Block {
 	public AnimatedCogBlock() {
 		super(BlockBehaviour.Properties.of(Material.STONE).sound(SoundType.METAL).strength(1f, 10f).noOcclusion()
 				.isRedstoneConductor((bs, br, bp) -> false));
-		setRegistryName("animated_cog");
 	}
 
 	@Override
@@ -57,7 +56,7 @@ public class AnimatedCogBlock extends Block {
 
 	@OnlyIn(Dist.CLIENT)
 	public static void registerRenderLayer() {
-		ItemBlockRenderTypes.setRenderLayer(EnergizedModBlocks.ANIMATED_COG, renderType -> renderType == RenderType.cutout());
+		ItemBlockRenderTypes.setRenderLayer(EnergizedModBlocks.ANIMATED_COG.get(), renderType -> renderType == RenderType.cutout());
 	}
 
 }

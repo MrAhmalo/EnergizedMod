@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "energized:block/compressed_lightning"
+    }
+  }
+}

@@ -1,39 +1,63 @@
 
 package net.mcreator.energized.world.features.lakes;
 
-import net.minecraft.world.level.levelgen.feature.configurations.BlockStateConfiguration;
+import net.minecraft.world.level.levelgen.placement.RarityFilter;
+import net.minecraft.world.level.levelgen.placement.PlacedFeature;
+import net.minecraft.world.level.levelgen.placement.InSquarePlacement;
+import net.minecraft.world.level.levelgen.placement.EnvironmentScanPlacement;
+import net.minecraft.world.level.levelgen.placement.BiomeFilter;
+import net.minecraft.world.level.levelgen.feature.stateproviders.BlockStateProvider;
 import net.minecraft.world.level.levelgen.feature.LakeFeature;
 import net.minecraft.world.level.levelgen.feature.FeaturePlaceContext;
+import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
-import net.minecraft.world.level.levelgen.VerticalAnchor;
+import net.minecraft.world.level.levelgen.blockpredicates.BlockPredicate;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.WorldGenLevel;
 import net.minecraft.world.level.Level;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.resources.ResourceKey;
+import net.minecraft.data.worldgen.placement.PlacementUtils;
+import net.minecraft.data.worldgen.features.FeatureUtils;
+import net.minecraft.core.Holder;
+import net.minecraft.core.Direction;
 
 import net.mcreator.energized.init.EnergizedModBlocks;
 
 import java.util.Set;
+import java.util.List;
 
 public class CompressedLightningFeature extends LakeFeature {
-	public static final CompressedLightningFeature FEATURE = (CompressedLightningFeature) new CompressedLightningFeature()
-			.setRegistryName("energized:compressed_lightning");
-	public static final ConfiguredFeature<?, ?> CONFIGURED_FEATURE = FEATURE
-			.configured(new BlockStateConfiguration(EnergizedModBlocks.COMPRESSED_LIGHTNING.defaultBlockState()))
-			.rangeUniform(VerticalAnchor.aboveBottom(0), VerticalAnchor.belowTop(0)).squared().rarity(5);
-	public static final Set<ResourceLocation> GENERATE_BIOMES = null;
+	public static CompressedLightningFeature FEATURE = null;
+	public static Holder<ConfiguredFeature<LakeFeature.Configuration, ?>> CONFIGURED_FEATURE = null;
+	public static Holder<PlacedFeature> PLACED_FEATURE = null;
 
-	public CompressedLightningFeature() {
-		super(BlockStateConfiguration.CODEC);
+	public static Feature<?> feature() {
+		FEATURE = new CompressedLightningFeature();
+		CONFIGURED_FEATURE = FeatureUtils.register("energized:compressed_lightning", FEATURE, new LakeFeature.Configuration(
+				BlockStateProvider.simple(EnergizedModBlocks.COMPRESSED_LIGHTNING.get()), BlockStateProvider.simple(Blocks.AIR)));
+		PLACED_FEATURE = PlacementUtils.register("energized:compressed_lightning", CONFIGURED_FEATURE,
+				List.of(RarityFilter.onAverageOnceEvery(5), InSquarePlacement.spread(), PlacementUtils.RANGE_BOTTOM_TO_MAX_TERRAIN_HEIGHT,
+						EnvironmentScanPlacement.scanningFor(Direction.DOWN, BlockPredicate.not(BlockPredicate.ONLY_IN_AIR_PREDICATE), 32),
+						BiomeFilter.biome()));
+		return FEATURE;
 	}
 
-	public boolean place(FeaturePlaceContext<BlockStateConfiguration> context) {
+	public static Holder<PlacedFeature> placedFeature() {
+		return PLACED_FEATURE;
+	}
+
+	public static final Set<ResourceLocation> GENERATE_BIOMES = null;
+	private final Set<ResourceKey<Level>> generate_dimensions = Set.of(Level.OVERWORLD);
+
+	public CompressedLightningFeature() {
+		super(LakeFeature.Configuration.CODEC);
+	}
+
+	@Override
+	public boolean place(FeaturePlaceContext<LakeFeature.Configuration> context) {
 		WorldGenLevel world = context.level();
-		ResourceKey<Level> dimensionType = world.getLevel().dimension();
-		boolean dimensionCriteria = false;
-		if (dimensionType == Level.OVERWORLD)
-			dimensionCriteria = true;
-		if (!dimensionCriteria)
+		if (!generate_dimensions.contains(world.getLevel().dimension()))
 			return false;
 		return super.place(context);
 	}
