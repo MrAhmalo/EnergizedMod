@@ -4,49 +4,52 @@
  */
 package net.mcreator.energized.init;
 
-import net.minecraftforge.registries.RegistryObject;
-import net.minecraftforge.registries.ForgeRegistries;
-import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.event.world.BiomeLoadingEvent;
+import net.minecraftforge.event.RegistryEvent;
 
-import net.minecraft.world.level.levelgen.placement.PlacedFeature;
 import net.minecraft.world.level.levelgen.feature.Feature;
+import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.levelgen.GenerationStep;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.core.Holder;
+import net.minecraft.data.BuiltinRegistries;
+import net.minecraft.core.Registry;
 
 import net.mcreator.energized.world.features.lakes.CompressedLightningFeature;
-import net.mcreator.energized.EnergizedMod;
 
-import java.util.function.Supplier;
 import java.util.Set;
-import java.util.List;
-import java.util.ArrayList;
+import java.util.Map;
+import java.util.HashMap;
 
-@Mod.EventBusSubscriber
+@Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
 public class EnergizedModFeatures {
-	public static final DeferredRegister<Feature<?>> REGISTRY = DeferredRegister.create(ForgeRegistries.FEATURES, EnergizedMod.MODID);
-	private static final List<FeatureRegistration> FEATURE_REGISTRATIONS = new ArrayList<>();
-	public static final RegistryObject<Feature<?>> COMPRESSED_LIGHTNING = register("compressed_lightning", CompressedLightningFeature::feature,
-			new FeatureRegistration(GenerationStep.Decoration.LAKES, CompressedLightningFeature.GENERATE_BIOMES,
-					CompressedLightningFeature::placedFeature));
-
-	private static RegistryObject<Feature<?>> register(String registryname, Supplier<Feature<?>> feature, FeatureRegistration featureRegistration) {
-		FEATURE_REGISTRATIONS.add(featureRegistration);
-		return REGISTRY.register(registryname, feature);
+	private static final Map<Feature<?>, FeatureRegistration> REGISTRY = new HashMap<>();
+	static {
+		REGISTRY.put(CompressedLightningFeature.FEATURE, new FeatureRegistration(GenerationStep.Decoration.LAKES,
+				CompressedLightningFeature.GENERATE_BIOMES, CompressedLightningFeature.CONFIGURED_FEATURE));
 	}
 
 	@SubscribeEvent
-	public static void addFeaturesToBiomes(BiomeLoadingEvent event) {
-		for (FeatureRegistration registration : FEATURE_REGISTRATIONS) {
-			if (registration.biomes() == null || registration.biomes().contains(event.getName()))
-				event.getGeneration().getFeatures(registration.stage()).add(registration.placedFeature().get());
+	public static void registerFeature(RegistryEvent.Register<Feature<?>> event) {
+		event.getRegistry().registerAll(REGISTRY.keySet().toArray(new Feature[0]));
+		REGISTRY.forEach((feature, registration) -> Registry.register(BuiltinRegistries.CONFIGURED_FEATURE, feature.getRegistryName(),
+				registration.configuredFeature()));
+	}
+
+	@Mod.EventBusSubscriber
+	private static class BiomeFeatureLoader {
+		@SubscribeEvent
+		public static void addFeatureToBiomes(BiomeLoadingEvent event) {
+			for (FeatureRegistration registration : REGISTRY.values()) {
+				if (registration.biomes() == null || registration.biomes().contains(event.getName())) {
+					event.getGeneration().getFeatures(registration.stage()).add(() -> registration.configuredFeature());
+				}
+			}
 		}
 	}
 
 	private static record FeatureRegistration(GenerationStep.Decoration stage, Set<ResourceLocation> biomes,
-			Supplier<Holder<PlacedFeature>> placedFeature) {
+			ConfiguredFeature<?, ?> configuredFeature) {
 	}
 }

@@ -4,34 +4,44 @@
  */
 package net.mcreator.energized.init;
 
-import net.minecraftforge.registries.RegistryObject;
-import net.minecraftforge.registries.ForgeRegistries;
-import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.api.distmarker.Dist;
 
 import net.minecraft.world.level.material.Fluid;
+import net.minecraft.world.level.material.FlowingFluid;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 
 import net.mcreator.energized.fluid.CompressedLightningFluid;
-import net.mcreator.energized.EnergizedMod;
 
+import java.util.List;
+import java.util.ArrayList;
+
+@Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
 public class EnergizedModFluids {
-	public static final DeferredRegister<Fluid> REGISTRY = DeferredRegister.create(ForgeRegistries.FLUIDS, EnergizedMod.MODID);
-	public static final RegistryObject<Fluid> COMPRESSED_LIGHTNING = REGISTRY.register("compressed_lightning",
-			() -> new CompressedLightningFluid.Source());
-	public static final RegistryObject<Fluid> FLOWING_COMPRESSED_LIGHTNING = REGISTRY.register("flowing_compressed_lightning",
-			() -> new CompressedLightningFluid.Flowing());
+	private static final List<Fluid> REGISTRY = new ArrayList<>();
+	public static final FlowingFluid COMPRESSED_LIGHTNING = register(new CompressedLightningFluid.Source());
+	public static final FlowingFluid FLOWING_COMPRESSED_LIGHTNING = register(new CompressedLightningFluid.Flowing());
+
+	private static FlowingFluid register(FlowingFluid fluid) {
+		REGISTRY.add(fluid);
+		return fluid;
+	}
+
+	@SubscribeEvent
+	public static void registerFluids(RegistryEvent.Register<Fluid> event) {
+		event.getRegistry().registerAll(REGISTRY.toArray(new Fluid[0]));
+	}
 
 	@Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
 	public static class ClientSideHandler {
 		@SubscribeEvent
 		public static void clientSetup(FMLClientSetupEvent event) {
-			ItemBlockRenderTypes.setRenderLayer(COMPRESSED_LIGHTNING.get(), renderType -> renderType == RenderType.translucent());
-			ItemBlockRenderTypes.setRenderLayer(FLOWING_COMPRESSED_LIGHTNING.get(), renderType -> renderType == RenderType.translucent());
+			ItemBlockRenderTypes.setRenderLayer(COMPRESSED_LIGHTNING, renderType -> renderType == RenderType.translucent());
+			ItemBlockRenderTypes.setRenderLayer(FLOWING_COMPRESSED_LIGHTNING, renderType -> renderType == RenderType.translucent());
 		}
 	}
 }

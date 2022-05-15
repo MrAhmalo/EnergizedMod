@@ -90,6 +90,15 @@
       "path": "~/Procuderes"
     },
     {
+      "name": "ElectronicBottle",
+      "type": "food",
+      "sortid": 7,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "electronic_bottle",
+      "path": "~/Items"
+    },
+    {
       "name": "LightningCompressor",
       "type": "block",
       "sortid": 2,
@@ -507,12 +516,12 @@
       "path": "~/Recipes"
     },
     {
-      "name": "ElectronicBottle",
+      "name": "BlockLocationSaver",
       "type": "item",
       "sortid": 28,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "electronic_bottle",
+      "registry_name": "block_location_saver",
       "path": "~/Items"
     }
   ],
@@ -520,8 +529,8 @@
   "sound_elements": [],
   "language_map": {
     "en_us": {
-      "block.energized.lightning_summoner": "Lightning Summoner",
       "item.energized.electronic_bottle": "Filled electronic bottle",
+      "block.energized.lightning_summoner": "Lightning Summoner",
       "fluid.energized.compressed_lightning": "Compressed Lightning",
       "block.energized.animated_cog": "Rotating Cog",
       "item.energized.compressed_lightning_bucket": "Compressed Lightning Bucket",
@@ -535,9 +544,10 @@
       "block.energized.compressed_lightning": "Compressed Lightning"
     },
     "de_de": {
-      "item.energized.electronic_bottle": "Gef�llte Elektronische Flasche",
       "block.energized.lightning_summoner": "Lightning Summoner",
+      "item.energized.electronic_bottle": "Gef�llte Elektronische Flasche",
       "fluid.energized.compressed_lightning": "Compressed Lightning",
+      "item.energized.block_location_saver": "Block Location Saver",
       "block.energized.animated_cog": "Drehendes Zahnrad",
       "item.energized.compressed_lightning_bucket": "Compressed Lightning Bucket",
       "block.energized.machine": "Machine",
@@ -554,31 +564,19 @@
     "name": "~",
     "children": [
       {
-        "name": "Advancements",
-        "children": []
-      },
-      {
-        "name": "Blocks",
-        "children": []
-      },
-      {
-        "name": "GUI",
-        "children": []
-      },
-      {
-        "name": "Procuderes",
-        "children": []
-      },
-      {
-        "name": "Fluids",
-        "children": []
-      },
-      {
         "name": "Items",
         "children": []
       },
       {
         "name": "Recipes",
+        "children": []
+      },
+      {
+        "name": "Advancements",
+        "children": []
+      },
+      {
+        "name": "Blocks",
         "children": []
       },
       {
@@ -593,14 +591,26 @@
             "children": []
           },
           {
-            "name": "TankBlock",
+            "name": "Machine",
             "children": []
           },
           {
-            "name": "Machine",
+            "name": "TankBlock",
             "children": []
           }
         ]
+      },
+      {
+        "name": "GUI",
+        "children": []
+      },
+      {
+        "name": "Procuderes",
+        "children": []
+      },
+      {
+        "name": "Fluids",
+        "children": []
       }
     ]
   },
@@ -617,10 +627,10 @@
     "dependencies": [],
     "dependants": [],
     "mcreatorDependencies": [],
-    "currentGenerator": "forge-1.18.2",
-    "credits": "Created using mod maker MCreator - https://mcreator.net/about",
+    "currentGenerator": "forge-1.17.1",
+    "credits": " ",
     "modElementsPackage": "net.mcreator.energized",
     "lockBaseModFiles": false
   },
-  "mcreatorVersion": 202200120510
+  "mcreatorVersion": 202100354000
 }

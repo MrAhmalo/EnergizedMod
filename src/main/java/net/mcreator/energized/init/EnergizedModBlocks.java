@@ -4,12 +4,10 @@
  */
 package net.mcreator.energized.init;
 
-import net.minecraftforge.registries.RegistryObject;
-import net.minecraftforge.registries.ForgeRegistries;
-import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.api.distmarker.Dist;
 
 import net.minecraft.world.level.block.Block;
@@ -20,16 +18,29 @@ import net.mcreator.energized.block.LightningSummonerBlock;
 import net.mcreator.energized.block.LightningCompressorBlock;
 import net.mcreator.energized.block.CompressedLightningBlock;
 import net.mcreator.energized.block.AnimatedCogBlock;
-import net.mcreator.energized.EnergizedMod;
 
+import java.util.List;
+import java.util.ArrayList;
+
+@Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
 public class EnergizedModBlocks {
-	public static final DeferredRegister<Block> REGISTRY = DeferredRegister.create(ForgeRegistries.BLOCKS, EnergizedMod.MODID);
-	public static final RegistryObject<Block> ANIMATED_COG = REGISTRY.register("animated_cog", () -> new AnimatedCogBlock());
-	public static final RegistryObject<Block> LIGHTNING_COMPRESSOR = REGISTRY.register("lightning_compressor", () -> new LightningCompressorBlock());
-	public static final RegistryObject<Block> TANK = REGISTRY.register("tank", () -> new TankBlock());
-	public static final RegistryObject<Block> MACHINE = REGISTRY.register("machine", () -> new MachineBlock());
-	public static final RegistryObject<Block> LIGHTNING_SUMMONER = REGISTRY.register("lightning_summoner", () -> new LightningSummonerBlock());
-	public static final RegistryObject<Block> COMPRESSED_LIGHTNING = REGISTRY.register("compressed_lightning", () -> new CompressedLightningBlock());
+	private static final List<Block> REGISTRY = new ArrayList<>();
+	public static final Block ANIMATED_COG = register(new AnimatedCogBlock());
+	public static final Block LIGHTNING_COMPRESSOR = register(new LightningCompressorBlock());
+	public static final Block TANK = register(new TankBlock());
+	public static final Block MACHINE = register(new MachineBlock());
+	public static final Block LIGHTNING_SUMMONER = register(new LightningSummonerBlock());
+	public static final Block COMPRESSED_LIGHTNING = register(new CompressedLightningBlock());
+
+	private static Block register(Block block) {
+		REGISTRY.add(block);
+		return block;
+	}
+
+	@SubscribeEvent
+	public static void registerBlocks(RegistryEvent.Register<Block> event) {
+		event.getRegistry().registerAll(REGISTRY.toArray(new Block[0]));
+	}
 
 	@Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
 	public static class ClientSideHandler {

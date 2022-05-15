@@ -16,22 +16,15 @@ package net.mcreator.energized;
 import org.apache.logging.log4j.Logger;
 import org.apache.logging.log4j.LogManager;
 
-import net.minecraftforge.network.simple.SimpleChannel;
-import net.minecraftforge.network.NetworkRegistry;
-import net.minecraftforge.network.NetworkEvent;
-import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
+import net.minecraftforge.fmllegacy.network.simple.SimpleChannel;
+import net.minecraftforge.fmllegacy.network.NetworkRegistry;
+import net.minecraftforge.fmllegacy.network.NetworkEvent;
 import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.eventbus.api.IEventBus;
 
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.network.FriendlyByteBuf;
 
 import net.mcreator.energized.init.EnergizedModTabs;
-import net.mcreator.energized.init.EnergizedModItems;
-import net.mcreator.energized.init.EnergizedModFluids;
-import net.mcreator.energized.init.EnergizedModFeatures;
-import net.mcreator.energized.init.EnergizedModBlocks;
-import net.mcreator.energized.init.EnergizedModBlockEntities;
 
 import java.util.function.Supplier;
 import java.util.function.Function;
@@ -48,14 +41,6 @@ public class EnergizedMod {
 
 	public EnergizedMod() {
 		EnergizedModTabs.load();
-		IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
-		EnergizedModBlocks.REGISTRY.register(bus);
-		EnergizedModItems.REGISTRY.register(bus);
-
-		EnergizedModBlockEntities.REGISTRY.register(bus);
-		EnergizedModFeatures.REGISTRY.register(bus);
-		EnergizedModFluids.REGISTRY.register(bus);
-
 	}
 
 	public static <T> void addNetworkMessage(Class<T> messageType, BiConsumer<T, FriendlyByteBuf> encoder, Function<FriendlyByteBuf, T> decoder,
