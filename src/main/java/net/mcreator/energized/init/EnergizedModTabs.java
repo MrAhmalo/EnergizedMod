@@ -17,7 +17,7 @@ public class EnergizedModTabs {
 		TAB_ENERGIZED = new CreativeModeTab("tabenergized") {
 			@Override
 			public ItemStack makeIcon() {
-				return new ItemStack(EnergizedModBlocks.ANIMATED_COG);
+				return new ItemStack(EnergizedModBlocks.ANIMATED_COG.get());
 			}
 
 			@OnlyIn(Dist.CLIENT)

@@ -523,6 +523,60 @@
       "locked_code": false,
       "registry_name": "block_location_saver",
       "path": "~/Items"
+    },
+    {
+      "name": "Lightingsummonerrightklickedgui",
+      "type": "gui",
+      "sortid": 29,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "lightingsummonerrightklickedgui",
+      "path": "~/GUI"
+    },
+    {
+      "name": "LightningSummonerOnBlockRightClicked",
+      "type": "procedure",
+      "sortid": 29,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "lightning_summoner_on_block_right_clicked",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/GUI"
+    },
+    {
+      "name": "Slot0Input",
+      "type": "procedure",
+      "sortid": 30,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "slot_0_input",
+      "metadata": {
+        "dependencies": []
+      },
+      "path": "~/Procuderes/EnergyProducer"
     }
   ],
   "variable_elements": [],
@@ -532,6 +586,7 @@
       "item.energized.electronic_bottle": "Filled electronic bottle",
       "block.energized.lightning_summoner": "Lightning Summoner",
       "fluid.energized.compressed_lightning": "Compressed Lightning",
+      "item.energized.block_location_saver": "Block Location Saver",
       "block.energized.animated_cog": "Rotating Cog",
       "item.energized.compressed_lightning_bucket": "Compressed Lightning Bucket",
       "block.energized.machine": "Machine",
@@ -606,7 +661,12 @@
       },
       {
         "name": "Procuderes",
-        "children": []
+        "children": [
+          {
+            "name": "EnergyProducer",
+            "children": []
+          }
+        ]
       },
       {
         "name": "Fluids",
@@ -627,10 +687,10 @@
     "dependencies": [],
     "dependants": [],
     "mcreatorDependencies": [],
-    "currentGenerator": "forge-1.17.1",
-    "credits": " ",
+    "currentGenerator": "forge-1.18.2",
+    "credits": "Created using mod maker MCreator - https://mcreator.net/about",
     "modElementsPackage": "net.mcreator.energized",
     "lockBaseModFiles": false
   },
-  "mcreatorVersion": 202100354000
+  "mcreatorVersion": 202200234517
 }

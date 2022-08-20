@@ -48,7 +48,7 @@ public class TankBlockEntity extends RandomizableContainerBlockEntity implements
 		if (!this.tryLoadLootTable(compound))
 			this.stacks = NonNullList.withSize(this.getContainerSize(), ItemStack.EMPTY);
 		ContainerHelper.loadAllItems(compound, this.stacks);
-		if (compound.get("fluidTank")instanceof CompoundTag compoundTag)
+		if (compound.get("fluidTank") instanceof CompoundTag compoundTag)
 			fluidTank.readFromNBT(compoundTag);
 	}
 

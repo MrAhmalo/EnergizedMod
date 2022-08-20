@@ -1,0 +1,130 @@
+{
+  "_fv": 33,
+  "_type": "gui",
+  "definition": {
+    "type": 1,
+    "width": 176,
+    "height": 166,
+    "inventoryOffsetX": 0,
+    "inventoryOffsetY": 0,
+    "renderBgLayer": true,
+    "doesPauseGame": false,
+    "components": [
+      {
+        "type": "label",
+        "data": {
+          "text": "Produce energy",
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "name": "Produce energy",
+          "x": 171,
+          "y": 46
+        }
+      },
+      {
+        "type": "inputslot",
+        "data": {
+          "inputLimit": {
+            "value": "CUSTOM:EmptyElectronicBottle"
+          },
+          "id": 0,
+          "disableStackInteraction": false,
+          "dropItemsWhenNotBound": false,
+          "name": "Slot #0",
+          "x": 165,
+          "y": 81
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "=",
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "name": "=",
+          "x": 217,
+          "y": 84
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "bottleempty.png",
+          "use1Xscale": false,
+          "name": "bottleempty.png",
+          "x": 166,
+          "y": 63
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "+",
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "name": "+",
+          "x": 186,
+          "y": 85
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "lighting_ingot.png",
+          "use1Xscale": false,
+          "name": "lighting_ingot.png",
+          "x": 195,
+          "y": 63
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "lighting_bottle.png",
+          "use1Xscale": false,
+          "name": "lighting_bottle.png",
+          "x": 230,
+          "y": 63
+        }
+      },
+      {
+        "type": "inputslot",
+        "data": {
+          "inputLimit": {
+            "value": ""
+          },
+          "id": 1,
+          "disableStackInteraction": false,
+          "dropItemsWhenNotBound": false,
+          "name": "Slot #1",
+          "x": 194,
+          "y": 81
+        }
+      },
+      {
+        "type": "outputslot",
+        "data": {
+          "id": 2,
+          "disableStackInteraction": false,
+          "dropItemsWhenNotBound": true,
+          "name": "Slot #2",
+          "x": 229,
+          "y": 81
+        }
+      }
+    ],
+    "gridSettings": {
+      "sx": 18,
+      "sy": 18,
+      "ox": 11,
+      "oy": 15,
+      "snapOnGrid": false
+    }
+  }
+}

@@ -11,6 +11,7 @@ import net.minecraftforge.api.distmarker.Dist;
 
 import net.minecraft.client.gui.screens.MenuScreens;
 
+import net.mcreator.energized.client.gui.LightingsummonerrightklickedguiScreen;
 import net.mcreator.energized.client.gui.FuelGUIScreen;
 
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
@@ -19,6 +20,7 @@ public class EnergizedModScreens {
 	public static void clientLoad(FMLClientSetupEvent event) {
 		event.enqueueWork(() -> {
 			MenuScreens.register(EnergizedModMenus.FUEL_GUI, FuelGUIScreen::new);
+			MenuScreens.register(EnergizedModMenus.LIGHTINGSUMMONERRIGHTKLICKEDGUI, LightingsummonerrightklickedguiScreen::new);
 		});
 	}
 }

@@ -4,9 +4,9 @@
  */
 package net.mcreator.energized.init;
 
-import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.event.RegistryEvent;
+import net.minecraftforge.registries.RegistryObject;
+import net.minecraftforge.registries.ForgeRegistries;
+import net.minecraftforge.registries.DeferredRegister;
 
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.item.Item;
@@ -14,37 +14,24 @@ import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.BlockItem;
 
 import net.mcreator.energized.item.EmptyElectronicBottleItem;
-import net.mcreator.energized.item.ElectronicBottleItem;
 import net.mcreator.energized.item.CompressedLightningItem;
 import net.mcreator.energized.item.BlockLocationSaverItem;
+import net.mcreator.energized.EnergizedMod;
 
-import java.util.List;
-import java.util.ArrayList;
-
-@Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
 public class EnergizedModItems {
-	private static final List<Item> REGISTRY = new ArrayList<>();
-	public static final Item ANIMATED_COG = register(EnergizedModBlocks.ANIMATED_COG, EnergizedModTabs.TAB_ENERGIZED);
-	public static final Item LIGHTNING_COMPRESSOR = register(EnergizedModBlocks.LIGHTNING_COMPRESSOR, EnergizedModTabs.TAB_ENERGIZED);
-	public static final Item TANK = register(EnergizedModBlocks.TANK, EnergizedModTabs.TAB_ENERGIZED);
-	public static final Item MACHINE = register(EnergizedModBlocks.MACHINE, EnergizedModTabs.TAB_ENERGIZED);
-	public static final Item LIGHTNING_SUMMONER = register(EnergizedModBlocks.LIGHTNING_SUMMONER, EnergizedModTabs.TAB_ENERGIZED);
-	public static final Item COMPRESSED_LIGHTNING_BUCKET = register(new CompressedLightningItem());
-	public static final Item ELECTRONIC_BOTTLE = register(new ElectronicBottleItem());
-	public static final Item EMPTY_ELECTRONIC_BOTTLE = register(new EmptyElectronicBottleItem());
-	public static final Item BLOCK_LOCATION_SAVER = register(new BlockLocationSaverItem());
+	public static final DeferredRegister<Item> REGISTRY = DeferredRegister.create(ForgeRegistries.ITEMS, EnergizedMod.MODID);
+	public static final RegistryObject<Item> ANIMATED_COG = block(EnergizedModBlocks.ANIMATED_COG, EnergizedModTabs.TAB_ENERGIZED);
+	public static final RegistryObject<Item> LIGHTNING_COMPRESSOR = block(EnergizedModBlocks.LIGHTNING_COMPRESSOR, EnergizedModTabs.TAB_ENERGIZED);
+	public static final RegistryObject<Item> TANK = block(EnergizedModBlocks.TANK, EnergizedModTabs.TAB_ENERGIZED);
+	public static final RegistryObject<Item> MACHINE = block(EnergizedModBlocks.MACHINE, EnergizedModTabs.TAB_ENERGIZED);
+	public static final RegistryObject<Item> LIGHTNING_SUMMONER = block(EnergizedModBlocks.LIGHTNING_SUMMONER, EnergizedModTabs.TAB_ENERGIZED);
+	public static final RegistryObject<Item> COMPRESSED_LIGHTNING_BUCKET = REGISTRY.register("compressed_lightning_bucket",
+			() -> new CompressedLightningItem());
+	public static final RegistryObject<Item> EMPTY_ELECTRONIC_BOTTLE = REGISTRY.register("empty_electronic_bottle",
+			() -> new EmptyElectronicBottleItem());
+	public static final RegistryObject<Item> BLOCK_LOCATION_SAVER = REGISTRY.register("block_location_saver", () -> new BlockLocationSaverItem());
 
-	private static Item register(Item item) {
-		REGISTRY.add(item);
-		return item;
-	}
-
-	private static Item register(Block block, CreativeModeTab tab) {
-		return register(new BlockItem(block, new Item.Properties().tab(tab)).setRegistryName(block.getRegistryName()));
-	}
-
-	@SubscribeEvent
-	public static void registerItems(RegistryEvent.Register<Item> event) {
-		event.getRegistry().registerAll(REGISTRY.toArray(new Item[0]));
+	private static RegistryObject<Item> block(RegistryObject<Block> block, CreativeModeTab tab) {
+		return REGISTRY.register(block.getId().getPath(), () -> new BlockItem(block.get(), new Item.Properties().tab(tab)));
 	}
 }

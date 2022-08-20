@@ -3,7 +3,6 @@ package net.mcreator.energized.procedures;
 import net.minecraftforge.fluids.capability.IFluidHandler;
 import net.minecraftforge.fluids.capability.CapabilityFluidHandler;
 
-import net.minecraft.world.level.block.state.properties.Property;
 import net.minecraft.world.level.block.state.properties.IntegerProperty;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.entity.BlockEntity;
@@ -59,19 +58,19 @@ public class MachineUpdateTickProcedure {
 				for (int index0 = 0; index0 < (int) (5); index0++) {
 					for (int index1 = 0; index1 < (int) (5); index1++) {
 						if (((world.getBlockState(new BlockPos(posX, posY, posZ))).getBlock().getStateDefinition()
-								.getProperty("age")instanceof IntegerProperty _ip
-										? (world.getBlockState(new BlockPos(posX, posY, posZ))).getValue(_ip)
+								.getProperty("age") instanceof IntegerProperty _getip5
+										? (world.getBlockState(new BlockPos(posX, posY, posZ))).getValue(_getip5)
 										: -1) < 7) {
 							{
 								int _value = (int) (((world.getBlockState(new BlockPos(posX, posY, posZ))).getBlock().getStateDefinition()
-										.getProperty("age")instanceof IntegerProperty _ip
-												? (world.getBlockState(new BlockPos(posX, posY, posZ))).getValue(_ip)
+										.getProperty("age") instanceof IntegerProperty _getip7
+												? (world.getBlockState(new BlockPos(posX, posY, posZ))).getValue(_getip7)
 												: -1)
 										+ 1);
-								BlockPos _pos = new BlockPos((int) posX, (int) posY, (int) posZ);
+								BlockPos _pos = new BlockPos(posX, posY, posZ);
 								BlockState _bs = world.getBlockState(_pos);
-								Property<?> _property = _bs.getBlock().getStateDefinition().getProperty("age");
-								if (_property instanceof IntegerProperty _integerProp && _property.getPossibleValues().contains(_value))
+								if (_bs.getBlock().getStateDefinition().getProperty("age") instanceof IntegerProperty _integerProp
+										&& _integerProp.getPossibleValues().contains(_value))
 									world.setBlock(_pos, _bs.setValue(_integerProp, _value), 3);
 							}
 						}
